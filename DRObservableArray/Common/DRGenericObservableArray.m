@@ -31,7 +31,7 @@
     return _objects.copy;
 }
 
-- (NSUInteger)objectsCount
+- (NSUInteger)count
 {
     return _objects.count;
 }

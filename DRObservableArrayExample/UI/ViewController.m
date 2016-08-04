@@ -45,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.words.objectsCount;
+    return self.words.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,7 +92,7 @@
 
 - (void)shuffleWords
 {
-    NSUInteger count = self.words.objectsCount;
+    NSUInteger count = self.words.count;
     if (count < 1) return;
     for (NSUInteger index = 0; index < count - 1; ++index) {
         NSUInteger remainingCount = count - index;

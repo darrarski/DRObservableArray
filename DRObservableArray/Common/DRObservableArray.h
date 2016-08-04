@@ -12,7 +12,7 @@
 - (DRObservableArrayObserversSet *)observers;
 
 - (NSArray *)objects;
-- (NSUInteger)objectsCount;
+- (NSUInteger)count;
 - (id)objectAtIndex:(NSUInteger)index;
 
 @end
