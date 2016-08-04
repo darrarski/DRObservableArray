@@ -10,8 +10,6 @@
     NSMutableArray *_objects;
 }
 
-@synthesize observers = _observers;
-
 - (instancetype)init
 {
     if (self = [super init]) {
@@ -21,7 +19,12 @@
     return self;
 }
 
-#pragma mark - Objects accessors
+#pragma mark - DRObservableArray
+
+- (DRObservableArrayObserversSet *)observers
+{
+    return _observers;
+}
 
 - (NSArray *)objects
 {
@@ -38,7 +41,7 @@
     return _objects[index];
 }
 
-#pragma mark - Objects mutability accessors
+#pragma mark - DRObservableArrayObserver
 
 - (void)setObjects:(NSArray *)objects
 {
@@ -92,7 +95,7 @@
                     toIndex:index1];
 }
 
-#pragma mark - Objects events
+#pragma mark - Events
 
 - (void)willChangeObjects
 {
