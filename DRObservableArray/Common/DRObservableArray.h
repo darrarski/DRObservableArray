@@ -9,7 +9,7 @@
 
 @protocol DRObservableArray <NSObject>
 
-@property (nonatomic, strong) DRObservableArrayObserversSet *observers;
+- (DRObservableArrayObserversSet *)observers;
 
 - (NSArray *)objects;
 - (NSUInteger)objectsCount;
