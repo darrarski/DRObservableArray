@@ -12,9 +12,9 @@
 		31FF53B51D52BB4E00EE1C70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53B41D52BB4E00EE1C70 /* ViewController.m */; };
 		31FF53BA1D52BB4E00EE1C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31FF53B91D52BB4E00EE1C70 /* Assets.xcassets */; };
 		31FF53BD1D52BB4E00EE1C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FF53BB1D52BB4E00EE1C70 /* LaunchScreen.storyboard */; };
-		31FF53D11D52C01400EE1C70 /* DRGenericObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53C91D52C01400EE1C70 /* DRGenericObservableArray.m */; };
-		31FF53D21D52C01400EE1C70 /* DRObservableArrayObserversSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53CD1D52C01400EE1C70 /* DRObservableArrayObserversSet.m */; };
 		9DA8A57BAD378B24F5C027F0 /* DRObservableArrayTableViewUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8ADC35DA23B834049BD14 /* DRObservableArrayTableViewUpdater.m */; };
+		9DA8A8081888DF7234AD6DE3 /* DRGenericObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AF99E617FDFCD07FBB36 /* DRGenericObservableArray.m */; };
+		9DA8ACFAF75A56CE2EB5A115 /* DRObservableArrayObserversSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,15 +27,15 @@
 		31FF53B91D52BB4E00EE1C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31FF53BC1D52BB4E00EE1C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31FF53BE1D52BB4E00EE1C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31FF53C81D52C01400EE1C70 /* DRGenericObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRGenericObservableArray.h; sourceTree = "<group>"; };
-		31FF53C91D52C01400EE1C70 /* DRGenericObservableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRGenericObservableArray.m; sourceTree = "<group>"; };
-		31FF53CA1D52C01400EE1C70 /* DRObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArray.h; sourceTree = "<group>"; };
-		31FF53CB1D52C01400EE1C70 /* DRObservableArrayObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserver.h; sourceTree = "<group>"; };
-		31FF53CC1D52C01400EE1C70 /* DRObservableArrayObserversSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserversSet.h; sourceTree = "<group>"; };
-		31FF53CD1D52C01400EE1C70 /* DRObservableArrayObserversSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayObserversSet.m; sourceTree = "<group>"; };
-		31FF53D01D52C01400EE1C70 /* DRObservableMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableMutableArray.h; sourceTree = "<group>"; };
+		9DA8A220968051C91046353C /* DRObservableArrayObserversSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserversSet.h; sourceTree = "<group>"; };
+		9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayObserversSet.m; sourceTree = "<group>"; };
 		9DA8A3477E33CAE223917F96 /* DRObservableArrayTableViewUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayTableViewUpdater.h; sourceTree = "<group>"; };
+		9DA8A3713461D8DD71C301CB /* DRObservableArrayObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserver.h; sourceTree = "<group>"; };
+		9DA8A3C063DCB7E741ABA64E /* DRGenericObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRGenericObservableArray.h; sourceTree = "<group>"; };
+		9DA8A5CBB3BB335528F242EC /* DRObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArray.h; sourceTree = "<group>"; };
+		9DA8AD3A2D496089996E370F /* DRObservableMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableMutableArray.h; sourceTree = "<group>"; };
 		9DA8ADC35DA23B834049BD14 /* DRObservableArrayTableViewUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayTableViewUpdater.m; sourceTree = "<group>"; };
+		9DA8AF99E617FDFCD07FBB36 /* DRGenericObservableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRGenericObservableArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +89,8 @@
 		31FF53C41D52BBC700EE1C70 /* DRObservableArray */ = {
 			isa = PBXGroup;
 			children = (
-				31FF53C81D52C01400EE1C70 /* DRGenericObservableArray.h */,
-				31FF53C91D52C01400EE1C70 /* DRGenericObservableArray.m */,
-				31FF53CA1D52C01400EE1C70 /* DRObservableArray.h */,
-				31FF53CB1D52C01400EE1C70 /* DRObservableArrayObserver.h */,
-				31FF53CC1D52C01400EE1C70 /* DRObservableArrayObserversSet.h */,
-				31FF53CD1D52C01400EE1C70 /* DRObservableArrayObserversSet.m */,
-				31FF53D01D52C01400EE1C70 /* DRObservableMutableArray.h */,
 				9DA8A82CD27BEA38E3491862 /* iOS */,
+				9DA8AEE4BCD448A0AC47AF38 /* Common */,
 			);
 			path = DRObservableArray;
 			sourceTree = "<group>";
@@ -135,6 +129,20 @@
 				9DA8A3477E33CAE223917F96 /* DRObservableArrayTableViewUpdater.h */,
 			);
 			path = iOS;
+			sourceTree = "<group>";
+		};
+		9DA8AEE4BCD448A0AC47AF38 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9DA8A3C063DCB7E741ABA64E /* DRGenericObservableArray.h */,
+				9DA8AF99E617FDFCD07FBB36 /* DRGenericObservableArray.m */,
+				9DA8A5CBB3BB335528F242EC /* DRObservableArray.h */,
+				9DA8A3713461D8DD71C301CB /* DRObservableArrayObserver.h */,
+				9DA8A220968051C91046353C /* DRObservableArrayObserversSet.h */,
+				9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */,
+				9DA8AD3A2D496089996E370F /* DRObservableMutableArray.h */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,12 +214,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31FF53D21D52C01400EE1C70 /* DRObservableArrayObserversSet.m in Sources */,
-				31FF53D11D52C01400EE1C70 /* DRGenericObservableArray.m in Sources */,
 				31FF53B51D52BB4E00EE1C70 /* ViewController.m in Sources */,
 				31FF53B21D52BB4E00EE1C70 /* AppDelegate.m in Sources */,
 				31FF53AF1D52BB4E00EE1C70 /* main.m in Sources */,
 				9DA8A57BAD378B24F5C027F0 /* DRObservableArrayTableViewUpdater.m in Sources */,
+				9DA8A8081888DF7234AD6DE3 /* DRGenericObservableArray.m in Sources */,
+				9DA8ACFAF75A56CE2EB5A115 /* DRObservableArrayObserversSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
