@@ -20,7 +20,7 @@ You can implement your own collection, or use provided one:
 
 Collection | Description
 --- | ---
-[`DRGenericObservableArray`]() | Acts like `NSMutableArray`. Implements both `DRObservableArray` and `DRObservableMutableArray` protocols.
+[`DRGenericObservableArray`](DRObservableArray/Common/DRGenericObservableArray.h) | Acts like `NSMutableArray`. Implements both `DRObservableArray` and `DRObservableMutableArray` protocols.
 
 You can implement your own observer, or use provided one:
 
@@ -40,9 +40,6 @@ id <DRObservableArrayObserver> observer = ...
 To avoid retain cycle issues, adding observer to collection creates __weak__ reference between collection and observer.
 
 Collection will notify its observers using `DRObservableArrayObserver` protocol methods when an object is added to, removed from, replaced or moved in collection.
-
-
-
 
 ## Instalation
 
