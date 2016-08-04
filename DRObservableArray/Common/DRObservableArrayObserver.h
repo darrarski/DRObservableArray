@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol DRObservableArray;
+
 /**
  * `DRObservableArrayObserver` defines ordered collection observer that
  * gets notified whenever collection changes.
@@ -13,13 +15,17 @@
 
 /**
  * This method is called when collection is about to change objects
+ *
+ * @param array Observable array
  */
-- (void)willChangeObjects;
+- (void)observableArrayWillChangeObjects:(id <DRObservableArray>)array;
 
 /**
  * This method is called after collection changed objects
+ *
+ * @param array Observable array
  */
-- (void)didChangeObjects;
+- (void)observableArrayDidChangeObjects:(id <DRObservableArray>)array;
 
 /**
  * This method is called when collection changed all objects

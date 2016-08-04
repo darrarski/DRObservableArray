@@ -106,17 +106,17 @@
 
 #pragma mark - ObservableArrayObserver
 
-- (void)willChangeObjects
+- (void)observableArrayWillChangeObjects:(id <DRObservableArray>)array
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer willChangeObjects];
+        [reference.observer observableArrayWillChangeObjects:array];
     }];
 }
 
-- (void)didChangeObjects
+- (void)observableArrayDidChangeObjects:(id <DRObservableArray>)array
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didChangeObjects];
+        [reference.observer observableArrayDidChangeObjects:array];
     }];
 }
 

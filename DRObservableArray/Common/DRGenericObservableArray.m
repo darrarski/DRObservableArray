@@ -45,47 +45,47 @@
 
 - (void)setObjects:(NSArray *)objects
 {
-    [self.observers willChangeObjects];
+    [self.observers observableArrayWillChangeObjects:self];
     _objects = [objects mutableCopy];
     [self.observers didSetObjects];
-    [self.observers didChangeObjects];
+    [self.observers observableArrayDidChangeObjects:self];
 }
 
 - (void)insertObject:(NSObject *)object atIndex:(NSUInteger)index
 {
-    [self.observers willChangeObjects];
+    [self.observers observableArrayWillChangeObjects:self];
     [_objects insertObject:object atIndex:index];
     [self.observers didInsertObject:object atIndex:index];
-    [self.observers didChangeObjects];
+    [self.observers observableArrayDidChangeObjects:self];
 }
 
 - (void)removeObjectAtIndex:(NSUInteger)index
 {
-    [self.observers willChangeObjects];
+    [self.observers observableArrayWillChangeObjects:self];
     id object = _objects[index];
     [_objects removeObjectAtIndex:index];
     [self.observers didRemoveObject:object atIndex:index];
-    [self.observers didChangeObjects];
+    [self.observers observableArrayDidChangeObjects:self];
 }
 
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)object
 {
-    [self.observers willChangeObjects];
+    [self.observers observableArrayWillChangeObjects:self];
     id replacedObject = _objects[index];
     _objects[index] = object;
     [self.observers didReplaceObject:replacedObject atIndex:index withObject:object];
-    [self.observers didChangeObjects];
+    [self.observers observableArrayDidChangeObjects:self];
 }
 
 - (void)moveObjectAtIndex:(NSUInteger)index toIndex:(NSUInteger)newIndex
 {
     if (newIndex == index) return;
-    [self.observers willChangeObjects];
+    [self.observers observableArrayWillChangeObjects:self];
     id object = _objects[index];
     [_objects removeObjectAtIndex:index];
     [_objects insertObject:object atIndex:newIndex];
     [self.observers didMoveObject:object fromIndex:index toIndex:newIndex];
-    [self.observers didChangeObjects];
+    [self.observers observableArrayDidChangeObjects:self];
 }
 
 - (void)exchangeObjectAtIndex:(NSUInteger)index1 withObjectAtIndex:(NSUInteger)index2

@@ -43,12 +43,12 @@
 
 #pragma mark - ObservableArrayObserver
 
-- (void)willChangeObjects
+- (void)observableArrayWillChangeObjects:(id <DRObservableArray>)array
 {
     [self.tableView beginUpdates];
 }
 
-- (void)didChangeObjects
+- (void)observableArrayDidChangeObjects:(id <DRObservableArray>)array
 {
     [self.tableView endUpdates];
 }
