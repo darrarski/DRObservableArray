@@ -44,10 +44,10 @@
 /**
  * Moves object at given index to another index
  *
- * @param index1 Index of object
- * @param index2 New index of object
+ * @param index Index of object
+ * @param newIndex New index of object
  */
-- (void)moveObjectAtIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2;
+- (void)moveObjectAtIndex:(NSUInteger)index toIndex:(NSUInteger)newIndex;
 
 /**
  * Exchanges objects with given indexes

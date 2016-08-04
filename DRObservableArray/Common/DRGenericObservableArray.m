@@ -77,14 +77,14 @@
     [self.observers didChangeObjects];
 }
 
-- (void)moveObjectAtIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2
+- (void)moveObjectAtIndex:(NSUInteger)index toIndex:(NSUInteger)newIndex
 {
-    if (index2 == index1) return;
+    if (newIndex == index) return;
     [self.observers willChangeObjects];
-    id object = _objects[index1];
-    [_objects removeObjectAtIndex:index1];
-    [_objects insertObject:object atIndex:index2];
-    [self.observers didMoveObject:object fromIndex:index1 toIndex:index2];
+    id object = _objects[index];
+    [_objects removeObjectAtIndex:index];
+    [_objects insertObject:object atIndex:newIndex];
+    [self.observers didMoveObject:object fromIndex:index toIndex:newIndex];
     [self.observers didChangeObjects];
 }
 
