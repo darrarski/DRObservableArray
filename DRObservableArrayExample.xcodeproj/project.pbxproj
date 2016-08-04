@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31F5370E1D53BEC50094B293 /* DRObservableArrayTests_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F5370D1D53BEC50094B293 /* DRObservableArrayTests_iOS.m */; };
 		31FF53AF1D52BB4E00EE1C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53AE1D52BB4E00EE1C70 /* main.m */; };
 		31FF53B21D52BB4E00EE1C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53B11D52BB4E00EE1C70 /* AppDelegate.m */; };
 		31FF53B51D52BB4E00EE1C70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53B41D52BB4E00EE1C70 /* ViewController.m */; };
@@ -31,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		31F5370B1D53BEC50094B293 /* DRObservableArrayTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DRObservableArrayTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31F5370D1D53BEC50094B293 /* DRObservableArrayTests_iOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayTests_iOS.m; sourceTree = "<group>"; };
 		31F5370F1D53BEC50094B293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31FF53AA1D52BB4E00EE1C70 /* DRObservableArrayExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DRObservableArrayExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FF53AE1D52BB4E00EE1C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 		31F5370C1D53BEC50094B293 /* DRObservableArrayTests-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				31F5370D1D53BEC50094B293 /* DRObservableArrayTests_iOS.m */,
 				31F537151D53BF260094B293 /* Supporting Files */,
 				9DA8A3BE8CF53A043902C881 /* DRObservableArrayTableViewUpdaterTest.m */,
 			);
@@ -287,7 +284,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31F5370E1D53BEC50094B293 /* DRObservableArrayTests_iOS.m in Sources */,
 				9DA8ADA1526E6392A26EBBF9 /* DRObservableArrayTableViewUpdaterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
