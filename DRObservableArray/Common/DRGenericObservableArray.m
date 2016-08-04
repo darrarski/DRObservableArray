@@ -55,7 +55,7 @@
 {
     [self willChangeObjects];
     [_objects insertObject:object atIndex:index];
-    [self didInsertObjectAtIndex:index];
+    [self didInsertObject:object atIndex:index];
     [self didChangeObjects];
 }
 
@@ -112,9 +112,9 @@
     [self.observers didSetObjects];
 }
 
-- (void)didInsertObjectAtIndex:(NSUInteger)index
+- (void)didInsertObject:(id)object atIndex:(NSUInteger)index
 {
-    [self.observers didInsertObjectAtIndex:index];
+    [self.observers didInsertObject:object atIndex:index];
 }
 
 - (void)didRemoveObjectAtIndex:(NSUInteger)index

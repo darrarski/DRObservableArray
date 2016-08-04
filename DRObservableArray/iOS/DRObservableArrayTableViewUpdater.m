@@ -58,7 +58,7 @@
     [self.tableView reloadData];
 }
 
-- (void)didInsertObjectAtIndex:(NSUInteger)index
+- (void)didInsertObject:(id)object atIndex:(NSUInteger)index
 {
     [self.tableView insertRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
                           withRowAnimation:UITableViewRowAnimationAutomatic];

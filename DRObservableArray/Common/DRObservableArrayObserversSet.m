@@ -127,10 +127,10 @@
     }];
 }
 
-- (void)didInsertObjectAtIndex:(NSUInteger)index
+- (void)didInsertObject:(id)object atIndex:(NSUInteger)index
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didInsertObjectAtIndex:index];
+        [reference.observer didInsertObject:object atIndex:index];
     }];
 }
 

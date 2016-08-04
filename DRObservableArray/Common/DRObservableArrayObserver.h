@@ -29,9 +29,10 @@
 /**
  * This method is called when a new object is inserted into collection
  *
+ * @param object Inserted object
  * @param index Index of inserted object
  */
-- (void)didInsertObjectAtIndex:(NSUInteger)index;
+- (void)didInsertObject:(id)object atIndex:(NSUInteger)index;
 
 /**
  * This method is called when object is removed from collection
