@@ -29,8 +29,10 @@
 
 /**
  * This method is called when collection changed all objects
+ *
+ * @param array Observable array
  */
-- (void)didSetObjects;
+- (void)observableArrayDidSetObjects:(id <DRObservableArray>)array;
 
 /**
  * This method is called when a new object is inserted into collection

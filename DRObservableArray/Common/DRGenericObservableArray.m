@@ -47,7 +47,7 @@
 {
     [self.observers observableArrayWillChangeObjects:self];
     _objects = [objects mutableCopy];
-    [self.observers didSetObjects];
+    [self.observers observableArrayDidSetObjects:self];
     [self.observers observableArrayDidChangeObjects:self];
 }
 

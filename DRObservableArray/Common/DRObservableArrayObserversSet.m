@@ -120,10 +120,10 @@
     }];
 }
 
-- (void)didSetObjects
+- (void)observableArrayDidSetObjects:(id <DRObservableArray>)array
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didSetObjects];
+        [reference.observer observableArrayDidSetObjects:array];
     }];
 }
 

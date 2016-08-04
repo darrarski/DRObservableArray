@@ -53,7 +53,7 @@
     [self.tableView endUpdates];
 }
 
-- (void)didSetObjects
+- (void)observableArrayDidSetObjects:(id <DRObservableArray>)array
 {
     [self.tableView reloadData];
 }
