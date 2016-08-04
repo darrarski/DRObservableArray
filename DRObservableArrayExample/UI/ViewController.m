@@ -9,7 +9,7 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NSObject <DRObservableArray, DRObservableMutableArray> *words;
+@property (nonatomic, strong) id <DRObservableArray, DRObservableMutableArray> words;
 @property (nonatomic, strong) DRObservableArrayTableViewUpdater *wordsTableViewUpdater;
 
 @end
@@ -60,7 +60,7 @@
 
 #pragma mark - Words
 
-- (NSObject <DRObservableArray, DRObservableMutableArray> *)words
+- (id <DRObservableArray, DRObservableMutableArray>)words
 {
     if (!_words) {
         DRGenericObservableArray *words = [[DRGenericObservableArray alloc] init];

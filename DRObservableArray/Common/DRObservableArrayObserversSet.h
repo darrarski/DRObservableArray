@@ -19,13 +19,13 @@
  *
  * @param observer Observer
  */
-- (void)addObserver:(NSObject <DRObservableArrayObserver> *)observer;
+- (void)addObserver:(id <DRObservableArrayObserver>)observer;
 
 /**
  * Remove observer from set
  *
  * @param observer Observer
  */
-- (void)removeObserver:(NSObject <DRObservableArrayObserver> *)observer;
+- (void)removeObserver:(id <DRObservableArrayObserver>)observer;
 
 @end

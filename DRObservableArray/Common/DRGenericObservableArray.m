@@ -51,7 +51,7 @@
     [self.observers observableArrayDidChangeObjects:self];
 }
 
-- (void)insertObject:(NSObject *)object atIndex:(NSUInteger)index
+- (void)insertObject:(id)object atIndex:(NSUInteger)index
 {
     [self.observers observableArrayWillChangeObjects:self];
     [_objects insertObject:object atIndex:index];

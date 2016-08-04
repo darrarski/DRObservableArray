@@ -11,7 +11,7 @@
  * `DRObservableArrayObserver` defines ordered collection observer that
  * gets notified whenever collection changes.
  */
-@protocol DRObservableArrayObserver <NSObject>
+@protocol DRObservableArrayObserver
 
 /**
  * This method is called when collection is about to change objects

@@ -11,7 +11,7 @@
  * `DRObservableArray` defines ordered collection that you can subscribe to
  * in order be notified whenever its content changes.
  */
-@protocol DRObservableArray <NSObject>
+@protocol DRObservableArray
 
 /**
  * Returns observers set so you can add or remove observer

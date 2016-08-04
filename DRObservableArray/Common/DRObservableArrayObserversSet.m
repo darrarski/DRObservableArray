@@ -9,13 +9,13 @@
 
 @interface ObservableArrayObserverWeakReference : NSObject
 
-@property (nonatomic, weak) NSObject <DRObservableArrayObserver> *observer;
+@property (nonatomic, weak) id <DRObservableArrayObserver> observer;
 
 @end
 
 @implementation ObservableArrayObserverWeakReference
 
-- (instancetype)initWithObserver:(NSObject <DRObservableArrayObserver> *)observer
+- (instancetype)initWithObserver:(id <DRObservableArrayObserver>)observer
 {
     if (self = [super init]) {
         _observer = observer;
@@ -78,7 +78,7 @@
     return _observerReferences;
 }
 
-- (void)addObserver:(NSObject <DRObservableArrayObserver> *)observer
+- (void)addObserver:(id <DRObservableArrayObserver>)observer
 {
     [self cleanUpObservers];
     if (observer == nil) return;
@@ -87,7 +87,7 @@
     self.observerReferences = [self.observerReferences setByAddingObject:reference];
 }
 
-- (void)removeObserver:(NSObject <DRObservableArrayObserver> *)observer
+- (void)removeObserver:(id <DRObservableArrayObserver>)observer
 {
     [self cleanUpObservers];
     if (observer == nil) return;

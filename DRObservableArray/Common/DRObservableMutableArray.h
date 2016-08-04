@@ -24,7 +24,7 @@
  * @param object Object
  * @param index Index
  */
-- (void)insertObject:(NSObject *)object atIndex:(NSUInteger)index;
+- (void)insertObject:(id)object atIndex:(NSUInteger)index;
 
 /**
  * Removes object at given index
