@@ -5,6 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/darrarski/DRObservableArray'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { 'Dariusz Rybicki' => 'darrarski@gmail.com' }
+  s.social_media_url = 'https://twitter.com/darrarski'
   s.source       = { :git => 'https://github.com/darrarski/DRObservableArray.git', :tag => 'v1.0.1' }
   
   s.requires_arc          = true
