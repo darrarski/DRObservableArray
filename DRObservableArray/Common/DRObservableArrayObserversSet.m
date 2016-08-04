@@ -148,10 +148,10 @@
     }];
 }
 
-- (void)didMoveObjectAtIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2
+- (void)didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didMoveObjectAtIndex:index1 toIndex:index2];
+        [reference.observer didMoveObject:object fromIndex:fromIndex toIndex:toIndex];
     }];
 }
 

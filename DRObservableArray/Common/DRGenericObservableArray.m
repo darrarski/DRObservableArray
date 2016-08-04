@@ -81,10 +81,10 @@
 {
     if (index2 == index1) return;
     [self willChangeObjects];
-    NSObject *object = _objects[index1];
+    id object = _objects[index1];
     [_objects removeObjectAtIndex:index1];
     [_objects insertObject:object atIndex:index2];
-    [self didMoveObjectAtIndex:index1 toIndex:index2];
+    [self didMoveObject:object fromIndex:index1 toIndex:index2];
     [self didChangeObjects];
 }
 
@@ -128,9 +128,9 @@
     [self.observers didReplaceObject:replacedObject atIndex:index];
 }
 
-- (void)didMoveObjectAtIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2
+- (void)didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
-    [self.observers didMoveObjectAtIndex:index1 toIndex:index2];
+    [self.observers didMoveObject:object fromIndex:fromIndex toIndex:toIndex];
 }
 
 @end

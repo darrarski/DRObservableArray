@@ -76,10 +76,10 @@
                           withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (void)didMoveObjectAtIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2
+- (void)didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
-    [self.tableView moveRowAtIndexPath:[self tableViewIndexPathFromObjectIndex:index1]
-                           toIndexPath:[self tableViewIndexPathFromObjectIndex:index2]];
+    [self.tableView moveRowAtIndexPath:[self tableViewIndexPathFromObjectIndex:fromIndex]
+                           toIndexPath:[self tableViewIndexPathFromObjectIndex:toIndex]];
 }
 
 @end

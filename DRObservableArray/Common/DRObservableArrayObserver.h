@@ -53,9 +53,10 @@
 /**
  * This method is called when object is moved in collection
  *
- * @param index1 Previous index of the object
- * @param index2 New (current) index of the object
+ * @param object Moved object
+ * @param fromIndex Previous index of the object
+ * @param toIndex New (current) index of the object
  */
-- (void)didMoveObjectAtIndex:(NSUInteger)index1 toIndex:(NSUInteger)index2;
+- (void)didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 
 @end
