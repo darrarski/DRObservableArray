@@ -10,7 +10,6 @@ before_install:
   - rvm use ruby-2.2.2 
   - gem install cocoapods --no-document # Since Travis is not always on latest version
   - gem install xcpretty --no-document
-  - chmod +x tests.sh
 script:
-  - set -o pipefail && ./tests.sh
+  - set -o pipefail && xcodebuild test -project DRObservableArrayExample.xcodeproj -scheme 'Tests iOS' -destination 'platform=iOS Simulator,name=iPhone 5s,OS=latest' ONLY_ACTIVE_ARCH=NO | xcpretty
   - pod lib lint
