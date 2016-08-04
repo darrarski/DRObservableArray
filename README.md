@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/DRObservableArray.svg?style=flat)](http://cocoapods.org/pods/DRObservableArray)
 [![Platform](https://img.shields.io/cocoapods/p/DRObservableArray.svg?style=flat)](http://cocoapods.org/pods/DRObservableArray)
 [![codebeat](https://codebeat.co/badges/5fc91c6c-8c53-4fb0-8a01-bef10c473ad2)](https://codebeat.co/projects/github-com-darrarski-drobservablearray)
+[![Build Status](https://travis-ci.org/darrarski/DRObservableArray.svg?branch=master)](https://travis-ci.org/darrarski/DRObservableArray)
 
 > Observable array and observable mutable array protocols with generic implementations in Objective-C.
 
