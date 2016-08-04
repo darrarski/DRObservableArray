@@ -37,9 +37,10 @@
 /**
  * This method is called when object is removed from collection
  *
+ * @param object Removed object
  * @param index Index of removed object
  */
-- (void)didRemoveObjectAtIndex:(NSUInteger)index;
+- (void)didRemoveObject:(id)object atIndex:(NSUInteger)index;
 
 /**
  * This method is called when object in collection is replaced with new object

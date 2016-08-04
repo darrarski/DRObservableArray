@@ -64,7 +64,7 @@
                           withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (void)didRemoveObjectAtIndex:(NSUInteger)index
+- (void)didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
     [self.tableView deleteRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
                           withRowAnimation:UITableViewRowAnimationAutomatic];;

@@ -134,10 +134,10 @@
     }];
 }
 
-- (void)didRemoveObjectAtIndex:(NSUInteger)index
+- (void)didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didRemoveObjectAtIndex:index];
+        [reference.observer didRemoveObject:object atIndex:index];
     }];
 }
 

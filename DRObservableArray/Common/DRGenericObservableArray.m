@@ -62,8 +62,9 @@
 - (void)removeObjectAtIndex:(NSUInteger)index
 {
     [self willChangeObjects];
+    id object = _objects[index];
     [_objects removeObjectAtIndex:index];
-    [self didRemoveObjectAtIndex:index];
+    [self didRemoveObject:object atIndex:index];
     [self didChangeObjects];
 }
 
@@ -117,9 +118,9 @@
     [self.observers didInsertObject:object atIndex:index];
 }
 
-- (void)didRemoveObjectAtIndex:(NSUInteger)index
+- (void)didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
-    [self.observers didRemoveObjectAtIndex:index];
+    [self.observers didRemoveObject:object atIndex:index];
 }
 
 - (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index
