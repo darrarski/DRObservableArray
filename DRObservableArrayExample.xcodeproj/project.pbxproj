@@ -16,6 +16,7 @@
 		9DA8A57BAD378B24F5C027F0 /* DRObservableArrayTableViewUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8ADC35DA23B834049BD14 /* DRObservableArrayTableViewUpdater.m */; };
 		9DA8A8081888DF7234AD6DE3 /* DRGenericObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AF99E617FDFCD07FBB36 /* DRGenericObservableArray.m */; };
 		9DA8ACFAF75A56CE2EB5A115 /* DRObservableArrayObserversSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */; };
+		9DA8ADA1526E6392A26EBBF9 /* DRObservableArrayTableViewUpdaterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A3BE8CF53A043902C881 /* DRObservableArrayTableViewUpdaterTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayObserversSet.m; sourceTree = "<group>"; };
 		9DA8A3477E33CAE223917F96 /* DRObservableArrayTableViewUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayTableViewUpdater.h; sourceTree = "<group>"; };
 		9DA8A3713461D8DD71C301CB /* DRObservableArrayObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserver.h; sourceTree = "<group>"; };
+		9DA8A3BE8CF53A043902C881 /* DRObservableArrayTableViewUpdaterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayTableViewUpdaterTest.m; sourceTree = "<group>"; };
 		9DA8A3C063DCB7E741ABA64E /* DRGenericObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRGenericObservableArray.h; sourceTree = "<group>"; };
 		9DA8A5CBB3BB335528F242EC /* DRObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArray.h; sourceTree = "<group>"; };
 		9DA8AD3A2D496089996E370F /* DRObservableMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableMutableArray.h; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				31F5370D1D53BEC50094B293 /* DRObservableArrayTests_iOS.m */,
 				31F537151D53BF260094B293 /* Supporting Files */,
+				9DA8A3BE8CF53A043902C881 /* DRObservableArrayTableViewUpdaterTest.m */,
 			);
 			path = "DRObservableArrayTests-iOS";
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31F5370E1D53BEC50094B293 /* DRObservableArrayTests_iOS.m in Sources */,
+				9DA8ADA1526E6392A26EBBF9 /* DRObservableArrayTableViewUpdaterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
