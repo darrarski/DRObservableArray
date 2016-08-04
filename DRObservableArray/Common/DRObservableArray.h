@@ -25,7 +25,7 @@
  *
  * @return All objects
  */
-- (NSArray *)allObjects;
+- (NSArray *)objects;
 
 /**
  * Returns count of objects

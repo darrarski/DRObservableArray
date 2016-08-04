@@ -26,7 +26,7 @@
     return _observers;
 }
 
-- (NSArray *)allObjects
+- (NSArray *)objects
 {
     return _objects.copy;
 }
