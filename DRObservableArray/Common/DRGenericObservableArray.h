@@ -6,6 +6,9 @@
 #import "DRObservableArray.h"
 #import "DRObservableMutableArray.h"
 
+/**
+ * `DRGenericObservableArray` is a generic observable mutable array build on top of `NSMutableArray`
+ */
 @interface DRGenericObservableArray : NSObject <DRObservableArray, DRObservableMutableArray>
 
 @end
