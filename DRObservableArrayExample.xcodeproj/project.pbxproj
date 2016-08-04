@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31F5370E1D53BEC50094B293 /* DRObservableArrayTests_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F5370D1D53BEC50094B293 /* DRObservableArrayTests_iOS.m */; };
 		31FF53AF1D52BB4E00EE1C70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53AE1D52BB4E00EE1C70 /* main.m */; };
 		31FF53B21D52BB4E00EE1C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53B11D52BB4E00EE1C70 /* AppDelegate.m */; };
 		31FF53B51D52BB4E00EE1C70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53B41D52BB4E00EE1C70 /* ViewController.m */; };
@@ -17,7 +18,20 @@
 		9DA8ACFAF75A56CE2EB5A115 /* DRObservableArrayObserversSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		31F537101D53BEC50094B293 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31FF53A21D52BB4E00EE1C70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31FF53A91D52BB4E00EE1C70;
+			remoteInfo = "DRObservableArrayExample-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		31F5370B1D53BEC50094B293 /* DRObservableArrayTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DRObservableArrayTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31F5370D1D53BEC50094B293 /* DRObservableArrayTests_iOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayTests_iOS.m; sourceTree = "<group>"; };
+		31F5370F1D53BEC50094B293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31FF53AA1D52BB4E00EE1C70 /* DRObservableArrayExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DRObservableArrayExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31FF53AE1D52BB4E00EE1C70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		31FF53B01D52BB4E00EE1C70 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		31F537081D53BEC50094B293 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31FF53A71D52BB4E00EE1C70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,11 +70,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31F5370C1D53BEC50094B293 /* DRObservableArrayTests-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				31F5370D1D53BEC50094B293 /* DRObservableArrayTests_iOS.m */,
+				31F537151D53BF260094B293 /* Supporting Files */,
+			);
+			path = "DRObservableArrayTests-iOS";
+			sourceTree = "<group>";
+		};
+		31F537151D53BF260094B293 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				31F5370F1D53BEC50094B293 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		31FF53A11D52BB4E00EE1C70 = {
 			isa = PBXGroup;
 			children = (
 				31FF53C41D52BBC700EE1C70 /* DRObservableArray */,
 				31FF53AC1D52BB4E00EE1C70 /* DRObservableArrayExample-iOS */,
+				31F5370C1D53BEC50094B293 /* DRObservableArrayTests-iOS */,
 				31FF53AB1D52BB4E00EE1C70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				31FF53AA1D52BB4E00EE1C70 /* DRObservableArrayExample-iOS.app */,
+				31F5370B1D53BEC50094B293 /* DRObservableArrayTests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +188,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		31F5370A1D53BEC50094B293 /* DRObservableArrayTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31F537121D53BEC50094B293 /* Build configuration list for PBXNativeTarget "DRObservableArrayTests-iOS" */;
+			buildPhases = (
+				31F537071D53BEC50094B293 /* Sources */,
+				31F537081D53BEC50094B293 /* Frameworks */,
+				31F537091D53BEC50094B293 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31F537111D53BEC50094B293 /* PBXTargetDependency */,
+			);
+			name = "DRObservableArrayTests-iOS";
+			productName = "DRObservableArrayTests-iOS";
+			productReference = 31F5370B1D53BEC50094B293 /* DRObservableArrayTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		31FF53A91D52BB4E00EE1C70 /* DRObservableArrayExample-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31FF53C11D52BB4E00EE1C70 /* Build configuration list for PBXNativeTarget "DRObservableArrayExample-iOS" */;
@@ -174,6 +232,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Darrarski;
 				TargetAttributes = {
+					31F5370A1D53BEC50094B293 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 31FF53A91D52BB4E00EE1C70;
+					};
 					31FF53A91D52BB4E00EE1C70 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -193,11 +255,19 @@
 			projectRoot = "";
 			targets = (
 				31FF53A91D52BB4E00EE1C70 /* DRObservableArrayExample-iOS */,
+				31F5370A1D53BEC50094B293 /* DRObservableArrayTests-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		31F537091D53BEC50094B293 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31FF53A81D52BB4E00EE1C70 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +280,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		31F537071D53BEC50094B293 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31F5370E1D53BEC50094B293 /* DRObservableArrayTests_iOS.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31FF53A61D52BB4E00EE1C70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +303,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		31F537111D53BEC50094B293 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31FF53A91D52BB4E00EE1C70 /* DRObservableArrayExample-iOS */;
+			targetProxy = 31F537101D53BEC50094B293 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		31FF53BB1D52BB4E00EE1C70 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -237,6 +323,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		31F537131D53BEC50094B293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "DRObservableArrayTests-iOS/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.darrarski.DRObservableArrayTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DRObservableArrayExample-iOS.app/DRObservableArrayExample-iOS";
+			};
+			name = Debug;
+		};
+		31F537141D53BEC50094B293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "DRObservableArrayTests-iOS/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.darrarski.DRObservableArrayTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DRObservableArrayExample-iOS.app/DRObservableArrayExample-iOS";
+			};
+			name = Release;
+		};
 		31FF53BF1D52BB4E00EE1C70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -344,6 +456,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		31F537121D53BEC50094B293 /* Build configuration list for PBXNativeTarget "DRObservableArrayTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31F537131D53BEC50094B293 /* Debug */,
+				31F537141D53BEC50094B293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		31FF53A51D52BB4E00EE1C70 /* Build configuration list for PBXProject "DRObservableArrayExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

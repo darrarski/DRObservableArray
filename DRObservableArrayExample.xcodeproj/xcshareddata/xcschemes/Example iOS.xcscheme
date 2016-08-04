@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "31F5370A1D53BEC50094B293"
+               BuildableName = "DRObservableArrayTests-iOS.xctest"
+               BlueprintName = "DRObservableArrayTests-iOS"
+               ReferencedContainer = "container:DRObservableArrayExample.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
