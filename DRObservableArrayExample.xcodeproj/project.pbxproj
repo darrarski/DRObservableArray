@@ -26,7 +26,7 @@
 		31FF53B41D52BB4E00EE1C70 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		31FF53B91D52BB4E00EE1C70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31FF53BC1D52BB4E00EE1C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		31FF53BE1D52BB4E00EE1C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31FF53BE1D52BB4E00EE1C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		9DA8A220968051C91046353C /* DRObservableArrayObserversSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserversSet.h; sourceTree = "<group>"; };
 		9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayObserversSet.m; sourceTree = "<group>"; };
 		9DA8A3477E33CAE223917F96 /* DRObservableArrayTableViewUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayTableViewUpdater.h; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				31FF53C41D52BBC700EE1C70 /* DRObservableArray */,
-				31FF53AC1D52BB4E00EE1C70 /* DRObservableArrayExample */,
+				31FF53AC1D52BB4E00EE1C70 /* DRObservableArrayExample-iOS */,
 				31FF53AB1D52BB4E00EE1C70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +66,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		31FF53AC1D52BB4E00EE1C70 /* DRObservableArrayExample */ = {
+		31FF53AC1D52BB4E00EE1C70 /* DRObservableArrayExample-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				31FF53C51D52BBEB00EE1C70 /* Application */,
@@ -74,7 +74,7 @@
 				31FF53AD1D52BB4E00EE1C70 /* Supporting Files */,
 				31FF53C61D52BC0900EE1C70 /* UI */,
 			);
-			path = DRObservableArrayExample;
+			path = "DRObservableArrayExample-iOS";
 			sourceTree = "<group>";
 		};
 		31FF53AD1D52BB4E00EE1C70 /* Supporting Files */ = {
@@ -323,7 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "DRObservableArrayExample/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "DRObservableArrayExample-iOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.darrarski.DRObservableArrayExample-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -334,7 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "DRObservableArrayExample/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "DRObservableArrayExample-iOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.darrarski.DRObservableArrayExample-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
