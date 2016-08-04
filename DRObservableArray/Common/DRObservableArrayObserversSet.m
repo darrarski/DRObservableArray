@@ -104,54 +104,61 @@
     self.observerReferences = [self.observerReferences setByRemovingObjects:nullReferences];
 }
 
+- (void)enumerateObserversWithBlock:(void (^)(id <DRObservableArrayObserver>))block
+{
+    [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
+        block(reference.observer);
+    }];
+}
+
 #pragma mark - ObservableArrayObserver
 
 - (void)observableArrayWillChangeObjects:(id <DRObservableArray>)array
 {
-    [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer observableArrayWillChangeObjects:array];
+    [self enumerateObserversWithBlock:^(id <DRObservableArrayObserver> observer) {
+        [observer observableArrayWillChangeObjects:array];
     }];
 }
 
 - (void)observableArrayDidChangeObjects:(id <DRObservableArray>)array
 {
-    [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer observableArrayDidChangeObjects:array];
+    [self enumerateObserversWithBlock:^(id <DRObservableArrayObserver> observer) {
+        [observer observableArrayDidChangeObjects:array];
     }];
 }
 
 - (void)observableArrayDidSetObjects:(id <DRObservableArray>)array
 {
-    [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer observableArrayDidSetObjects:array];
+    [self enumerateObserversWithBlock:^(id <DRObservableArrayObserver> observer) {
+        [observer observableArrayDidSetObjects:array];
     }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didInsertObject:(id)object atIndex:(NSUInteger)index
 {
-    [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer observableArray:array didInsertObject:object atIndex:index];
+    [self enumerateObserversWithBlock:^(id <DRObservableArrayObserver> observer) {
+        [observer observableArray:array didInsertObject:object atIndex:index];
     }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
-    [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer observableArray:array didRemoveObject:object atIndex:index];
+    [self enumerateObserversWithBlock:^(id <DRObservableArrayObserver> observer) {
+        [observer observableArray:array didRemoveObject:object atIndex:index];
     }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
-    [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer observableArray:array didReplaceObject:replacedObject atIndex:index withObject:newObject];
+    [self enumerateObserversWithBlock:^(id <DRObservableArrayObserver> observer) {
+        [observer observableArray:array didReplaceObject:replacedObject atIndex:index withObject:newObject];
     }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
-    [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer observableArray:array didMoveObject:object fromIndex:fromIndex toIndex:toIndex];
+    [self enumerateObserversWithBlock:^(id <DRObservableArrayObserver> observer) {
+        [observer observableArray:array didMoveObject:object fromIndex:fromIndex toIndex:toIndex];
     }];
 }
 
