@@ -141,10 +141,10 @@
     }];
 }
 
-- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index
+- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didReplaceObject:replacedObject atIndex:index];
+        [reference.observer didReplaceObject:replacedObject atIndex:index withObject:newObject];
     }];
 }
 

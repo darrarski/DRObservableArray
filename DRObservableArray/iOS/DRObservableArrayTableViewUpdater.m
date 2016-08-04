@@ -70,7 +70,7 @@
                           withRowAnimation:UITableViewRowAnimationAutomatic];;
 }
 
-- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index
+- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
     [self.tableView reloadRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
                           withRowAnimation:UITableViewRowAnimationAutomatic];

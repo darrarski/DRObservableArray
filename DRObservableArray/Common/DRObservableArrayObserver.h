@@ -47,8 +47,9 @@
  *
  * @param replacedObject Object that is being replaced
  * @param index Index of replaced object
+ * @param newObject New object
  */
-- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index;
+- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject;
 
 /**
  * This method is called when object is moved in collection
