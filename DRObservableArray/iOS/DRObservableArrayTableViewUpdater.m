@@ -58,25 +58,25 @@
     [self.tableView reloadData];
 }
 
-- (void)didInsertObject:(id)object atIndex:(NSUInteger)index
+- (void)observableArray:(id <DRObservableArray>)array didInsertObject:(id)object atIndex:(NSUInteger)index
 {
     [self.tableView insertRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
                           withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (void)didRemoveObject:(id)object atIndex:(NSUInteger)index
+- (void)observableArray:(id <DRObservableArray>)array didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
     [self.tableView deleteRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
                           withRowAnimation:UITableViewRowAnimationAutomatic];;
 }
 
-- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
+- (void)observableArray:(id <DRObservableArray>)array didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
     [self.tableView reloadRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
                           withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (void)didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
+- (void)observableArray:(id <DRObservableArray>)array didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
     [self.tableView moveRowAtIndexPath:[self tableViewIndexPathFromObjectIndex:fromIndex]
                            toIndexPath:[self tableViewIndexPathFromObjectIndex:toIndex]];

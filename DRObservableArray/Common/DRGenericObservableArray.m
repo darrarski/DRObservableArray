@@ -55,7 +55,7 @@
 {
     [self.observers observableArrayWillChangeObjects:self];
     [_objects insertObject:object atIndex:index];
-    [self.observers didInsertObject:object atIndex:index];
+    [self.observers observableArray:self didInsertObject:object atIndex:index];
     [self.observers observableArrayDidChangeObjects:self];
 }
 
@@ -64,7 +64,7 @@
     [self.observers observableArrayWillChangeObjects:self];
     id object = _objects[index];
     [_objects removeObjectAtIndex:index];
-    [self.observers didRemoveObject:object atIndex:index];
+    [self.observers observableArray:self didRemoveObject:object atIndex:index];
     [self.observers observableArrayDidChangeObjects:self];
 }
 
@@ -73,7 +73,7 @@
     [self.observers observableArrayWillChangeObjects:self];
     id replacedObject = _objects[index];
     _objects[index] = object;
-    [self.observers didReplaceObject:replacedObject atIndex:index withObject:object];
+    [self.observers observableArray:self didReplaceObject:replacedObject atIndex:index withObject:object];
     [self.observers observableArrayDidChangeObjects:self];
 }
 
@@ -84,7 +84,7 @@
     id object = _objects[index];
     [_objects removeObjectAtIndex:index];
     [_objects insertObject:object atIndex:newIndex];
-    [self.observers didMoveObject:object fromIndex:index toIndex:newIndex];
+    [self.observers observableArray:self didMoveObject:object fromIndex:index toIndex:newIndex];
     [self.observers observableArrayDidChangeObjects:self];
 }
 

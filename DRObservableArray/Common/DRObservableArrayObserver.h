@@ -37,35 +37,39 @@
 /**
  * This method is called when a new object is inserted into collection
  *
+ * @param array Observable array
  * @param object Inserted object
  * @param index Index of inserted object
  */
-- (void)didInsertObject:(id)object atIndex:(NSUInteger)index;
+- (void)observableArray:(id <DRObservableArray>)array didInsertObject:(id)object atIndex:(NSUInteger)index;
 
 /**
  * This method is called when object is removed from collection
  *
+ * @param array Observable array
  * @param object Removed object
  * @param index Index of removed object
  */
-- (void)didRemoveObject:(id)object atIndex:(NSUInteger)index;
+- (void)observableArray:(id <DRObservableArray>)array didRemoveObject:(id)object atIndex:(NSUInteger)index;
 
 /**
  * This method is called when object in collection is replaced with new object
  *
+ * @param array Observable array
  * @param replacedObject Object that is being replaced
  * @param index Index of replaced object
  * @param newObject New object
  */
-- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject;
+- (void)observableArray:(id <DRObservableArray>)array didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject;
 
 /**
  * This method is called when object is moved in collection
  *
+ * @param array Observable array
  * @param object Moved object
  * @param fromIndex Previous index of the object
  * @param toIndex New (current) index of the object
  */
-- (void)didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
+- (void)observableArray:(id <DRObservableArray>)array didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 
 @end

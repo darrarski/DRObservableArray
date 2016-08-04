@@ -127,31 +127,31 @@
     }];
 }
 
-- (void)didInsertObject:(id)object atIndex:(NSUInteger)index
+- (void)observableArray:(id <DRObservableArray>)array didInsertObject:(id)object atIndex:(NSUInteger)index
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didInsertObject:object atIndex:index];
+        [reference.observer observableArray:array didInsertObject:object atIndex:index];
     }];
 }
 
-- (void)didRemoveObject:(id)object atIndex:(NSUInteger)index
+- (void)observableArray:(id <DRObservableArray>)array didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didRemoveObject:object atIndex:index];
+        [reference.observer observableArray:array didRemoveObject:object atIndex:index];
     }];
 }
 
-- (void)didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
+- (void)observableArray:(id <DRObservableArray>)array didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didReplaceObject:replacedObject atIndex:index withObject:newObject];
+        [reference.observer observableArray:array didReplaceObject:replacedObject atIndex:index withObject:newObject];
     }];
 }
 
-- (void)didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
+- (void)observableArray:(id <DRObservableArray>)array didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
     [self.observerReferences enumerateObjectsUsingBlock:^(ObservableArrayObserverWeakReference *reference, BOOL *stop) {
-        [reference.observer didMoveObject:object fromIndex:fromIndex toIndex:toIndex];
+        [reference.observer observableArray:array didMoveObject:object fromIndex:fromIndex toIndex:toIndex];
     }];
 }
 
