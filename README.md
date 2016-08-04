@@ -1,5 +1,9 @@
 # DRObservableArray
 
+[![Version](https://img.shields.io/cocoapods/v/DRObservableArray.svg?style=flat)](http://cocoapods.org/pods/DRObservableArray)
+[![License](https://img.shields.io/cocoapods/l/DRObservableArray.svg?style=flat)](http://cocoapods.org/pods/DRObservableArray)
+[![Platform](https://img.shields.io/cocoapods/p/DRObservableArray.svg?style=flat)](http://cocoapods.org/pods/DRObservableArray)
+
 > Observable array and observable mutable array protocols with generic implementations in Objective-C.
 
 `DRObservableArray` helps to create bindings with mutable ordered collecions. For example, you can bind _(view)_models array to `UITableView`, so it automaticlally updates with animation whenever you modify the array.
