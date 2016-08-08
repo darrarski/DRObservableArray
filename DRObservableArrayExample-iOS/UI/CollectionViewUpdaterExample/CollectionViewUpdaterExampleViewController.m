@@ -5,10 +5,12 @@
 
 #import "CollectionViewUpdaterExampleViewController.h"
 #import "DRGenericObservableArray.h"
+#import "DRObservableArrayCollectionViewUpdater.h"
 
 @interface CollectionViewUpdaterExampleViewController () <UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) id <DRObservableArray, DRObservableMutableArray> colors;
+@property (nonatomic, strong) DRObservableArrayCollectionViewUpdater *colorsCollectionViewUpdater;
 
 @end
 
@@ -31,6 +33,7 @@
                                                                                            action:@selector(shuffleButtonAction)];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.colors.observers addObserver:self.colorsCollectionViewUpdater];
 }
 
 #pragma mark - UI Actions
@@ -109,6 +112,22 @@
                            green:(CGFloat) (((float)((hex & 0xFF00) >> 8)) / 255.0)
                             blue:(CGFloat) (((float)(hex & 0xFF)) / 255.0)
                            alpha:1.0];
+}
+
+- (DRObservableArrayCollectionViewUpdater *)colorsCollectionViewUpdater
+{
+    if (!_colorsCollectionViewUpdater) {
+        __weak typeof(self) welf = self;
+        ObservableArrayCollectionViewUpdaterTableViewBlock collectionViewBlock = ^UICollectionView * {
+            return welf.collectionView;
+        };
+        ObservableArrayCollectionViewUpdaterSectionBlock sectionBlock = ^NSUInteger {
+            return 0;
+        };
+        _colorsCollectionViewUpdater = [[DRObservableArrayCollectionViewUpdater alloc] initWithCollectionViewBlock:collectionViewBlock
+                                                                                                      sectionBlock:sectionBlock];
+    }
+    return _colorsCollectionViewUpdater;
 }
 
 - (void)shuffleColors
