@@ -45,41 +45,55 @@
 
 - (void)observableArrayWillChangeObjects:(id <DRObservableArray>)array
 {
-    [self.tableView beginUpdates];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView beginUpdates];
+    });
 }
 
 - (void)observableArrayDidChangeObjects:(id <DRObservableArray>)array
 {
-    [self.tableView endUpdates];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView endUpdates];
+    });
 }
 
 - (void)observableArrayDidSetObjects:(id <DRObservableArray>)array
 {
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didInsertObject:(id)object atIndex:(NSUInteger)index
 {
-    [self.tableView insertRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView insertRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+    });
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
-    [self.tableView deleteRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView deleteRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+    });
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
-    [self.tableView reloadRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+    });
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
-    [self.tableView moveRowAtIndexPath:[self tableViewIndexPathFromObjectIndex:fromIndex]
-                           toIndexPath:[self tableViewIndexPathFromObjectIndex:toIndex]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView moveRowAtIndexPath:[self tableViewIndexPathFromObjectIndex:fromIndex]
+                               toIndexPath:[self tableViewIndexPathFromObjectIndex:toIndex]];
+    });
 }
 
 @end
