@@ -55,28 +55,38 @@
 
 - (void)observableArrayDidSetObjects:(id <DRObservableArray>)array
 {
-    [self.collectionView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView reloadData];
+    });
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didInsertObject:(id)object atIndex:(NSUInteger)index
 {
-    [self.collectionView insertItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView insertItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
+    });
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
-    [self.collectionView deleteItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView deleteItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
+    });
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
-    [self.collectionView reloadItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView reloadItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
+    });
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
-    [self.collectionView moveItemAtIndexPath:[self collectionViewIndexPathFromObjectIndex:fromIndex]
-                                 toIndexPath:[self collectionViewIndexPathFromObjectIndex:toIndex]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView moveItemAtIndexPath:[self collectionViewIndexPathFromObjectIndex:fromIndex]
+                                     toIndexPath:[self collectionViewIndexPathFromObjectIndex:toIndex]];
+    });
 }
 
 @end
