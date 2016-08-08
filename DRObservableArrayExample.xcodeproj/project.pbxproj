@@ -11,6 +11,7 @@
 		31FF53B21D52BB4E00EE1C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53B11D52BB4E00EE1C70 /* AppDelegate.m */; };
 		31FF53BA1D52BB4E00EE1C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31FF53B91D52BB4E00EE1C70 /* Assets.xcassets */; };
 		31FF53BD1D52BB4E00EE1C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FF53BB1D52BB4E00EE1C70 /* LaunchScreen.storyboard */; };
+		9DA8A22DF345FB34A957A74E /* DRObservableArrayCollectionViewUpdaterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8ABA37BA9EDFFCFBD5E68 /* DRObservableArrayCollectionViewUpdaterTest.m */; };
 		9DA8A238CCA21BDD5D3623D9 /* UICollectionViewMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AD22F2B131062E3AFB86 /* UICollectionViewMock.m */; };
 		9DA8A36229E132AD2E426048 /* ExamplesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A629C504C0514A9E5A30 /* ExamplesListViewController.m */; };
 		9DA8A5564EC2C5B6188B1827 /* CollectionViewUpdaterExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A015F23648588FEFCCAA /* CollectionViewUpdaterExampleViewController.m */; };
@@ -59,6 +60,7 @@
 		9DA8A7D93C35F1102B4BF651 /* CollectionViewUpdaterExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewUpdaterExampleViewController.h; sourceTree = "<group>"; };
 		9DA8A92C74E7146650166607 /* UICollectionViewMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewMock.h; sourceTree = "<group>"; };
 		9DA8AB2D0D4A0457119B55FA /* ExamplesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplesListViewController.h; sourceTree = "<group>"; };
+		9DA8ABA37BA9EDFFCFBD5E68 /* DRObservableArrayCollectionViewUpdaterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayCollectionViewUpdaterTest.m; sourceTree = "<group>"; };
 		9DA8AC65C742F4BBF4161F4D /* TableViewUpdaterExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewUpdaterExampleViewController.h; sourceTree = "<group>"; };
 		9DA8AC8F97546AC825CE8209 /* UITableViewMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewMock.h; sourceTree = "<group>"; };
 		9DA8AD22F2B131062E3AFB86 /* UICollectionViewMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewMock.m; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				9DA8A3BE8CF53A043902C881 /* DRObservableArrayTableViewUpdaterTest.m */,
 				9DA8A032A81D0E72D5D7236F /* Mocks */,
 				31F537151D53BF260094B293 /* Supporting Files */,
+				9DA8ABA37BA9EDFFCFBD5E68 /* DRObservableArrayCollectionViewUpdaterTest.m */,
 			);
 			path = "DRObservableArrayTests-iOS";
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				9DA8ADA1526E6392A26EBBF9 /* DRObservableArrayTableViewUpdaterTest.m in Sources */,
 				9DA8A76B0F90541451997F1C /* UITableViewMock.m in Sources */,
 				9DA8A238CCA21BDD5D3623D9 /* UICollectionViewMock.m in Sources */,
+				9DA8A22DF345FB34A957A74E /* DRObservableArrayCollectionViewUpdaterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
