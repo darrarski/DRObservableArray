@@ -53,7 +53,7 @@ You can integrate `DRObservableArray` with your project using CocoaPods. To do s
 
     pod 'DRObservableArray', '~> 1.0'
 
-Which creates dependecy for version `>= 1.0.0` and `< 1.1.0`
+Which creates dependecy for version `>= 1.0.0` and `< 2.0.0`
 
 You can also download zip archive of given release from [releases page](https://github.com/darrarski/DRObservableArray/releases).
 
