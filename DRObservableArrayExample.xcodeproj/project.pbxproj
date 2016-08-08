@@ -19,6 +19,7 @@
 		9DA8A8081888DF7234AD6DE3 /* DRGenericObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AF99E617FDFCD07FBB36 /* DRGenericObservableArray.m */; };
 		9DA8ACFAF75A56CE2EB5A115 /* DRObservableArrayObserversSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */; };
 		9DA8ADA1526E6392A26EBBF9 /* DRObservableArrayTableViewUpdaterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A3BE8CF53A043902C881 /* DRObservableArrayTableViewUpdaterTest.m */; };
+		9DA8AFB8FF7B58AA8B4013D8 /* DRObservableArrayCollectionViewUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A23A6F80A601A80582BA /* DRObservableArrayCollectionViewUpdater.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		31FF53BE1D52BB4E00EE1C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		9DA8A015F23648588FEFCCAA /* CollectionViewUpdaterExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewUpdaterExampleViewController.m; sourceTree = "<group>"; };
 		9DA8A220968051C91046353C /* DRObservableArrayObserversSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserversSet.h; sourceTree = "<group>"; };
+		9DA8A23A6F80A601A80582BA /* DRObservableArrayCollectionViewUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayCollectionViewUpdater.m; sourceTree = "<group>"; };
 		9DA8A25D4256330C5DD53255 /* TableViewUpdaterExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewUpdaterExampleViewController.m; sourceTree = "<group>"; };
 		9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayObserversSet.m; sourceTree = "<group>"; };
 		9DA8A3477E33CAE223917F96 /* DRObservableArrayTableViewUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayTableViewUpdater.h; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		9DA8A3C063DCB7E741ABA64E /* DRGenericObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRGenericObservableArray.h; sourceTree = "<group>"; };
 		9DA8A5CBB3BB335528F242EC /* DRObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArray.h; sourceTree = "<group>"; };
 		9DA8A629C504C0514A9E5A30 /* ExamplesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamplesListViewController.m; sourceTree = "<group>"; };
+		9DA8A6AEE1EEF3F09FB56906 /* DRObservableArrayCollectionViewUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayCollectionViewUpdater.h; sourceTree = "<group>"; };
 		9DA8A7D038F66A25A201A7EE /* UITableViewMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewMock.m; sourceTree = "<group>"; };
 		9DA8A7D93C35F1102B4BF651 /* CollectionViewUpdaterExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewUpdaterExampleViewController.h; sourceTree = "<group>"; };
 		9DA8AB2D0D4A0457119B55FA /* ExamplesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplesListViewController.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 			children = (
 				9DA8ADC35DA23B834049BD14 /* DRObservableArrayTableViewUpdater.m */,
 				9DA8A3477E33CAE223917F96 /* DRObservableArrayTableViewUpdater.h */,
+				9DA8A23A6F80A601A80582BA /* DRObservableArrayCollectionViewUpdater.m */,
+				9DA8A6AEE1EEF3F09FB56906 /* DRObservableArrayCollectionViewUpdater.h */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				9DA8A625B64052DEC03C965E /* TableViewUpdaterExampleViewController.m in Sources */,
 				9DA8A36229E132AD2E426048 /* ExamplesListViewController.m in Sources */,
 				9DA8A5564EC2C5B6188B1827 /* CollectionViewUpdaterExampleViewController.m in Sources */,
+				9DA8AFB8FF7B58AA8B4013D8 /* DRObservableArrayCollectionViewUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
