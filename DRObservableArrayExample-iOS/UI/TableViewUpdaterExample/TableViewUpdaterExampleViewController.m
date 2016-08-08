@@ -92,13 +92,15 @@
 
 - (void)shuffleWords
 {
-    NSUInteger count = self.words.count;
-    if (count < 1) return;
-    for (NSUInteger index = 0; index < count - 1; ++index) {
-        NSUInteger remainingCount = count - index;
-        NSUInteger exchangeIndex = index + arc4random_uniform((u_int32_t )remainingCount);
-        [self.words exchangeObjectAtIndex:index withObjectAtIndex:exchangeIndex];
-    }
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+        NSUInteger count = self.words.count;
+        if (count < 1) return;
+        for (NSUInteger index = 0; index < count - 1; ++index) {
+            NSUInteger remainingCount = count - index;
+            NSUInteger exchangeIndex = index + arc4random_uniform((u_int32_t )remainingCount);
+            [self.words exchangeObjectAtIndex:index withObjectAtIndex:exchangeIndex];
+        }
+    });
 }
 
 @end
