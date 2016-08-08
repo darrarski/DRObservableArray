@@ -4,14 +4,14 @@
 //
 
 #import "AppDelegate.h"
-#import "TableViewUpdaterExampleViewController.h"
+#import "ExamplesListViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[TableViewUpdaterExampleViewController alloc] init]];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ExamplesListViewController alloc] init]];
     [self.window makeKeyAndVisible];
     return YES;
 }
