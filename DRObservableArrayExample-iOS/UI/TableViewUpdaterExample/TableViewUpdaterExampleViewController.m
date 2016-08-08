@@ -19,7 +19,7 @@
 - (instancetype)init
 {
     if (self = [super initWithStyle:UITableViewStylePlain]) {
-        self.title = @"DRObservableArrayExample";
+        self.title = @"Table View Updater Example";
     }
     return self;
 }
