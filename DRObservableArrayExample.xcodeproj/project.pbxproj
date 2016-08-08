@@ -11,6 +11,7 @@
 		31FF53B21D52BB4E00EE1C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53B11D52BB4E00EE1C70 /* AppDelegate.m */; };
 		31FF53BA1D52BB4E00EE1C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31FF53B91D52BB4E00EE1C70 /* Assets.xcassets */; };
 		31FF53BD1D52BB4E00EE1C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FF53BB1D52BB4E00EE1C70 /* LaunchScreen.storyboard */; };
+		9DA8A238CCA21BDD5D3623D9 /* UICollectionViewMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AD22F2B131062E3AFB86 /* UICollectionViewMock.m */; };
 		9DA8A36229E132AD2E426048 /* ExamplesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A629C504C0514A9E5A30 /* ExamplesListViewController.m */; };
 		9DA8A5564EC2C5B6188B1827 /* CollectionViewUpdaterExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A015F23648588FEFCCAA /* CollectionViewUpdaterExampleViewController.m */; };
 		9DA8A57BAD378B24F5C027F0 /* DRObservableArrayTableViewUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8ADC35DA23B834049BD14 /* DRObservableArrayTableViewUpdater.m */; };
@@ -56,9 +57,11 @@
 		9DA8A6AEE1EEF3F09FB56906 /* DRObservableArrayCollectionViewUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayCollectionViewUpdater.h; sourceTree = "<group>"; };
 		9DA8A7D038F66A25A201A7EE /* UITableViewMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewMock.m; sourceTree = "<group>"; };
 		9DA8A7D93C35F1102B4BF651 /* CollectionViewUpdaterExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewUpdaterExampleViewController.h; sourceTree = "<group>"; };
+		9DA8A92C74E7146650166607 /* UICollectionViewMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewMock.h; sourceTree = "<group>"; };
 		9DA8AB2D0D4A0457119B55FA /* ExamplesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplesListViewController.h; sourceTree = "<group>"; };
 		9DA8AC65C742F4BBF4161F4D /* TableViewUpdaterExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewUpdaterExampleViewController.h; sourceTree = "<group>"; };
 		9DA8AC8F97546AC825CE8209 /* UITableViewMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewMock.h; sourceTree = "<group>"; };
+		9DA8AD22F2B131062E3AFB86 /* UICollectionViewMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewMock.m; sourceTree = "<group>"; };
 		9DA8AD3A2D496089996E370F /* DRObservableMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableMutableArray.h; sourceTree = "<group>"; };
 		9DA8ADC35DA23B834049BD14 /* DRObservableArrayTableViewUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayTableViewUpdater.m; sourceTree = "<group>"; };
 		9DA8AF99E617FDFCD07FBB36 /* DRGenericObservableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRGenericObservableArray.m; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 			children = (
 				9DA8AC8F97546AC825CE8209 /* UITableViewMock.h */,
 				9DA8A7D038F66A25A201A7EE /* UITableViewMock.m */,
+				9DA8AD22F2B131062E3AFB86 /* UICollectionViewMock.m */,
+				9DA8A92C74E7146650166607 /* UICollectionViewMock.h */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 			files = (
 				9DA8ADA1526E6392A26EBBF9 /* DRObservableArrayTableViewUpdaterTest.m in Sources */,
 				9DA8A76B0F90541451997F1C /* UITableViewMock.m in Sources */,
+				9DA8A238CCA21BDD5D3623D9 /* UICollectionViewMock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
