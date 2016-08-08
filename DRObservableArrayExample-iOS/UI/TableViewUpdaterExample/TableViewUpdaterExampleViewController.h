@@ -5,7 +5,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface TableViewUpdaterExampleViewController : UITableViewController
 
 - (instancetype)init;
 

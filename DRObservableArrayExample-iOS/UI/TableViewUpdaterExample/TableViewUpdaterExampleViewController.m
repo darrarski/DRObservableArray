@@ -3,18 +3,18 @@
 //  Copyright © 2016 Darrarski. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TableViewUpdaterExampleViewController.h"
 #import "DRGenericObservableArray.h"
 #import "DRObservableArrayTableViewUpdater.h"
 
-@interface ViewController ()
+@interface TableViewUpdaterExampleViewController ()
 
 @property (nonatomic, strong) id <DRObservableArray, DRObservableMutableArray> words;
 @property (nonatomic, strong) DRObservableArrayTableViewUpdater *wordsTableViewUpdater;
 
 @end
 
-@implementation ViewController
+@implementation TableViewUpdaterExampleViewController
 
 - (instancetype)init
 {
