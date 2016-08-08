@@ -32,8 +32,8 @@ You can implement your own observer, or use provided one:
 
 Observer | Description
 --- | ---
-[`DRObservableArrayTableViewUpdater`](DRObservableArray/iOS/DRObservableArrayTableViewUpdater.h) | Updates `UITableView` section automatically whenever collection is modified. **iOS only**.
-
+[`DRObservableArrayTableViewUpdater`](DRObservableArray/iOS/DRObservableArrayTableViewUpdater.h) | Updates `UITableView` section automatically whenever observable array is modified. **iOS only**.
+[`DRObservableArrayCollectionViewUpdater`](DRObservableArray/iOS/DRObservableArrayCollectionViewUpdater.h) | Updates `UICollectionView` section automatically whenever observable array is modified. **iOS only**.
 
 When you need to subscribe for collection changes, add an observer to collection like this:
 
