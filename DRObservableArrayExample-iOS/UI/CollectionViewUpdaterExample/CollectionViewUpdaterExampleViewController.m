@@ -26,8 +26,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                           target:self
+                                                                                           action:@selector(shuffleButtonAction)];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+}
+
+#pragma mark - UI Actions
+
+- (void)shuffleButtonAction
+{
+    [self shuffleColors];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -99,6 +109,17 @@
                            green:(CGFloat) (((float)((hex & 0xFF00) >> 8)) / 255.0)
                             blue:(CGFloat) (((float)(hex & 0xFF)) / 255.0)
                            alpha:1.0];
+}
+
+- (void)shuffleColors
+{
+    NSUInteger count = self.colors.count;
+    if (count < 1) return;
+    for (NSUInteger index = 0; index < count - 1; ++index) {
+        NSUInteger remainingCount = count - index;
+        NSUInteger exchangeIndex = index + arc4random_uniform((u_int32_t )remainingCount);
+        [self.colors exchangeObjectAtIndex:index withObjectAtIndex:exchangeIndex];
+    }
 }
 
 @end
