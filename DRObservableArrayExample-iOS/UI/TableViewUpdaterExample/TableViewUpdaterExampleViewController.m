@@ -19,7 +19,7 @@
 - (instancetype)init
 {
     if (self = [super initWithStyle:UITableViewStylePlain]) {
-        self.title = @"Table View Updater Example";
+        self.title = @"Table View Updater";
     }
     return self;
 }
