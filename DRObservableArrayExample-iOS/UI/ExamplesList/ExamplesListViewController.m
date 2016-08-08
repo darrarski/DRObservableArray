@@ -5,6 +5,7 @@
 
 #import "ExamplesListViewController.h"
 #import "TableViewUpdaterExampleViewController.h"
+#import "CollectionViewUpdaterExampleViewController.h"
 
 @implementation ExamplesListViewController
 
@@ -27,7 +28,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -38,6 +39,8 @@
         switch (indexPath.row) {
             case 0:
                 return @"Table View Updater Example";
+            case 1:
+                return @"Collection View Updater Example";
             default:
                 return nil;
         }
@@ -51,6 +54,10 @@
     switch (indexPath.row) {
         case 0:
             [self.navigationController pushViewController:[[TableViewUpdaterExampleViewController alloc] init]
+                                                 animated:YES];
+            break;
+        case 1:
+            [self.navigationController pushViewController:[[CollectionViewUpdaterExampleViewController alloc] init]
                                                  animated:YES];
             break;
         default:
