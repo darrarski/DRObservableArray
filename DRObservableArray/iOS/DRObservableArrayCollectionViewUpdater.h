@@ -16,6 +16,11 @@ typedef NSUInteger (^ObservableArrayCollectionViewUpdaterSectionBlock)();
 @interface DRObservableArrayCollectionViewUpdater : NSObject <DRObservableArrayObserver>
 
 /**
+ * Serial operation queue used to perform operation on `UICollectionView`
+ */
+@property (nonatomic, strong, readonly) NSOperationQueue *operationQueue;
+
+/**
  * Initializes observer with given collection view and section blocks
  *
  * @param collectionViewBlock A block that returns `UICollectionView` instance

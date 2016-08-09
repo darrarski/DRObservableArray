@@ -20,6 +20,9 @@
     if (self = [super init]) {
         _collectionViewBlock = collectionViewBlock;
         _sectionBlock = sectionBlock;
+        _operationQueue = [[NSOperationQueue alloc] init];
+        _operationQueue.maxConcurrentOperationCount = 1;
+        _operationQueue.qualityOfService = NSOperationQualityOfServiceUserInteractive;
     }
     return self;
 }
@@ -41,6 +44,11 @@
     return [NSIndexPath indexPathForRow:index inSection:self.section];
 }
 
+- (void)addOperation:(void (^)())block
+{
+    [self.operationQueue addOperationWithBlock:block];
+}
+
 #pragma mark - ObservableArrayObserver
 
 - (void)observableArrayWillChangeObjects:(id <DRObservableArray>)array
@@ -55,38 +63,48 @@
 
 - (void)observableArrayDidSetObjects:(id <DRObservableArray>)array
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadData];
-    });
+    UICollectionView *collectionView = self.collectionView;
+    [self addOperation:^{
+        [collectionView reloadData];
+    }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didInsertObject:(id)object atIndex:(NSUInteger)index
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView insertItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
-    });
+    UICollectionView *collectionView = self.collectionView;
+    NSIndexPath *indexPath = [self collectionViewIndexPathFromObjectIndex:index];
+    [self addOperation:^{
+        [collectionView insertItemsAtIndexPaths:@[indexPath]];
+    }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView deleteItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
-    });
+    UICollectionView *collectionView = self.collectionView;
+    NSIndexPath *indexPath = [self collectionViewIndexPathFromObjectIndex:index];
+    [self addOperation:^{
+        [collectionView deleteItemsAtIndexPaths:@[indexPath]];
+    }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView reloadItemsAtIndexPaths:@[[self collectionViewIndexPathFromObjectIndex:index]]];
-    });
+    UICollectionView *collectionView = self.collectionView;
+    NSIndexPath *indexPath = [self collectionViewIndexPathFromObjectIndex:index];
+    [self addOperation:^{
+        [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.collectionView moveItemAtIndexPath:[self collectionViewIndexPathFromObjectIndex:fromIndex]
-                                     toIndexPath:[self collectionViewIndexPathFromObjectIndex:toIndex]];
-    });
+    UICollectionView *collectionView = self.collectionView;
+    NSIndexPath *fromIndexPath = [self collectionViewIndexPathFromObjectIndex:fromIndex];
+    NSIndexPath *toIndexPath = [self collectionViewIndexPathFromObjectIndex:toIndex];
+    [self addOperation:^{
+        [collectionView moveItemAtIndexPath:fromIndexPath
+                                toIndexPath:toIndexPath];
+    }];
 }
 
 @end
