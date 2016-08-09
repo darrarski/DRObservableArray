@@ -20,6 +20,9 @@
     if (self = [super init]) {
         _tableViewBlock = tableViewBlock;
         _sectionBlock = sectionBlock;
+        _operationQueue = [[NSOperationQueue alloc] init];
+        _operationQueue.maxConcurrentOperationCount = 1;
+        _operationQueue.qualityOfService = NSOperationQualityOfServiceUserInteractive;
     }
     return self;
 }
@@ -41,59 +44,76 @@
     return [NSIndexPath indexPathForRow:index inSection:self.section];
 }
 
+- (void)addOperation:(void (^)())block
+{
+    [self.operationQueue addOperationWithBlock:block];
+}
+
 #pragma mark - ObservableArrayObserver
 
 - (void)observableArrayWillChangeObjects:(id <DRObservableArray>)array
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView beginUpdates];
-    });
+    UITableView *tableView = self.tableView;
+    [self addOperation:^{
+        [tableView beginUpdates];
+    }];
 }
 
 - (void)observableArrayDidChangeObjects:(id <DRObservableArray>)array
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView endUpdates];
-    });
+    UITableView *tableView = self.tableView;
+    [self addOperation:^{
+        [tableView endUpdates];
+    }];
 }
 
 - (void)observableArrayDidSetObjects:(id <DRObservableArray>)array
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
+    UITableView *tableView = self.tableView;
+    [self addOperation:^{
+        [tableView reloadData];
+    }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didInsertObject:(id)object atIndex:(NSUInteger)index
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView insertRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
+    UITableView *tableView = self.tableView;
+    NSIndexPath *indexPath = [self tableViewIndexPathFromObjectIndex:index];
+    [self addOperation:^{
+        [tableView insertRowsAtIndexPaths:@[indexPath]
                               withRowAnimation:UITableViewRowAnimationAutomatic];
-    });
+    }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didRemoveObject:(id)object atIndex:(NSUInteger)index
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView deleteRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
+    UITableView *tableView = self.tableView;
+    NSIndexPath *indexPath = [self tableViewIndexPathFromObjectIndex:index];
+    [self addOperation:^{
+        [tableView deleteRowsAtIndexPaths:@[indexPath]
                               withRowAnimation:UITableViewRowAnimationAutomatic];
-    });
+    }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didReplaceObject:(id)replacedObject atIndex:(NSUInteger)index withObject:(id)newObject
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadRowsAtIndexPaths:@[[self tableViewIndexPathFromObjectIndex:index]]
+    UITableView *tableView = self.tableView;
+    NSIndexPath *indexPath = [self tableViewIndexPathFromObjectIndex:index];
+    [self addOperation:^{
+        [tableView reloadRowsAtIndexPaths:@[indexPath]
                               withRowAnimation:UITableViewRowAnimationAutomatic];
-    });
+    }];
 }
 
 - (void)observableArray:(id <DRObservableArray>)array didMoveObject:(id)object fromIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView moveRowAtIndexPath:[self tableViewIndexPathFromObjectIndex:fromIndex]
-                               toIndexPath:[self tableViewIndexPathFromObjectIndex:toIndex]];
-    });
+    UITableView *tableView = self.tableView;
+    NSIndexPath *fromIndexPath = [self tableViewIndexPathFromObjectIndex:fromIndex];
+    NSIndexPath *toIndexPath = [self tableViewIndexPathFromObjectIndex:toIndex];
+    [self addOperation:^{
+        [tableView moveRowAtIndexPath:fromIndexPath
+                          toIndexPath:toIndexPath];
+    }];
 }
 
 @end
