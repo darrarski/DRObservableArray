@@ -63,7 +63,9 @@
         [self.tableView stringForInsertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:6 inSection:self.sectionIndex]] withRowAnimation:UITableViewRowAnimationAutomatic],
         [self.tableView stringForEndUpdates]
     ];
-    XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should insert row when inserting object");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should insert row when inserting object");
+    });
 }
 
 - (void)testShouldDeleteRowWhenRemovingObject
@@ -74,7 +76,9 @@
         [self.tableView stringForDeleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]] withRowAnimation:UITableViewRowAnimationAutomatic],
         [self.tableView stringForEndUpdates]
     ];
-    XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should delete row when removing object");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should delete row when removing object");
+    });
 }
 
 - (void)testShouldReloadDataWhenSettingObjects
@@ -85,7 +89,9 @@
         [self.tableView stringForReloadData],
         [self.tableView stringForEndUpdates]
     ];
-    XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should reload data when setting objects");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should reload data when setting objects");
+    });
 }
 
 - (void)testShouldReloadRowWhenReplacingObject
@@ -96,7 +102,9 @@
         [self.tableView stringForReloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]] withRowAnimation:UITableViewRowAnimationAutomatic],
         [self.tableView stringForEndUpdates]
     ];
-    XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should reload row when replacing object");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should reload row when replacing object");
+    });
 }
 
 - (void)testShouldMoveRowWhenMovingObject
@@ -107,7 +115,9 @@
         [self.tableView stringForMoveRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:self.sectionIndex] toIndexPath:[NSIndexPath indexPathForRow:1 inSection:self.sectionIndex]],
         [self.tableView stringForEndUpdates]
     ];
-    XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should move row when moving object");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should move row when moving object");
+    });
 }
 
 - (void)testShouldMoveTwoRowsWhenExchagingObjects
@@ -121,7 +131,9 @@
         [self.tableView stringForMoveRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex] toIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]],
         [self.tableView stringForEndUpdates]
     ];
-    XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should move two rows when exchanging objects");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.tableView.operationStrings, expectedOperationStrings, @"Should move two rows when exchanging objects");
+    });
 }
 
 @end

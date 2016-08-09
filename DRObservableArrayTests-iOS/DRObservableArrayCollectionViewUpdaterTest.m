@@ -60,7 +60,9 @@
     NSArray *expectedOperationStrings = @[
         [self.collectionView stringForInsertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:6 inSection:self.sectionIndex]]]
     ];
-    XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should insert item when inserting object");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should insert item when inserting object");
+    });
 }
 
 - (void)testShouldDeleteRowWhenRemovingObject
@@ -69,7 +71,9 @@
     NSArray *expectedOperationStrings = @[
         [self.collectionView stringForDeleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]]]
     ];
-    XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should delete item when removing object");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should delete item when removing object");
+    });
 }
 
 - (void)testShouldReloadDataWhenSettingObjects
@@ -78,7 +82,9 @@
     NSArray *expectedOperationStrings = @[
         [self.collectionView stringForReloadData]
     ];
-    XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should reload data when setting objects");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should reload data when setting objects");
+    });
 }
 
 - (void)testShouldReloadRowWhenReplacingObject
@@ -87,7 +93,9 @@
     NSArray *expectedOperationStrings = @[
         [self.collectionView stringForReloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]]]
     ];
-    XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should reload item when replacing object");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should reload item when replacing object");
+    });
 }
 
 - (void)testShouldMoveRowWhenMovingObject
@@ -97,7 +105,9 @@
         [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:self.sectionIndex]
                                               toIndexPath:[NSIndexPath indexPathForRow:1 inSection:self.sectionIndex]]
     ];
-    XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should move item when moving object");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should move item when moving object");
+    });
 }
 
 - (void)testShouldMoveTwoRowsWhenExchagingObjects
@@ -109,7 +119,9 @@
         [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]
                                               toIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]]
     ];
-    XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should move two items when exchanging objects");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should move two items when exchanging objects");
+    });
 }
 
 @end
