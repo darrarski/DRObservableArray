@@ -46,7 +46,9 @@
 
 - (void)addOperation:(void (^)())block
 {
-    [self.operationQueue addOperationWithBlock:block];
+    [self.operationQueue addOperationWithBlock:^{
+        dispatch_sync(dispatch_get_main_queue(), block);
+    }];
 }
 
 #pragma mark - ObservableArrayObserver
