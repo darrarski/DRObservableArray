@@ -16,9 +16,9 @@ typedef NSUInteger (^ObservableArrayTableViewUpdaterSectionBlock)();
 @interface DRObservableArrayTableViewUpdater : NSObject <DRObservableArrayObserver>
 
 /**
- * Serial operation queue used to perform operation on `UITableView`
+ * Serial dispatch queue used to perform operation on `UITableView`
  */
-@property (nonatomic, strong, readonly) NSOperationQueue *operationQueue;
+@property (nonatomic, retain, readonly) dispatch_queue_t queue;
 
 /**
  * Initializes observer with given table view and section blocks

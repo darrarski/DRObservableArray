@@ -20,9 +20,7 @@
     if (self = [super init]) {
         _tableViewBlock = tableViewBlock;
         _sectionBlock = sectionBlock;
-        _operationQueue = [[NSOperationQueue alloc] init];
-        _operationQueue.maxConcurrentOperationCount = 1;
-        _operationQueue.qualityOfService = NSOperationQualityOfServiceUserInteractive;
+        _queue = dispatch_queue_create("queue", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
@@ -46,9 +44,9 @@
 
 - (void)addOperation:(void (^)())block
 {
-    [self.operationQueue addOperationWithBlock:^{
+    dispatch_async(self.queue, ^{
         dispatch_sync(dispatch_get_main_queue(), block);
-    }];
+    });
 }
 
 #pragma mark - ObservableArrayObserver
