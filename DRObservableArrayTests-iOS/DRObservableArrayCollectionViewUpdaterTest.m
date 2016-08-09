@@ -56,10 +56,9 @@
 
 - (void)testShouldInsertRowWhenInsertingObject
 {
-    [self performInBackgroundAndWait:^{
+    [self before:^{
         [self.collection insertObject:@"G" atIndex:6];
-    }];
-    [self performInSutQueueAndWait:^{
+    } then:^{
         NSArray *expectedOperationStrings = @[
             [self.collectionView stringForInsertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:6 inSection:self.sectionIndex]]]
         ];
@@ -69,10 +68,9 @@
 
 - (void)testShouldDeleteRowWhenRemovingObject
 {
-    [self performInBackgroundAndWait:^{
+    [self before:^{
         [self.collection removeObjectAtIndex:4];
-    }];
-    [self performInSutQueueAndWait:^{
+    } then:^{
         NSArray *expectedOperationStrings = @[
             [self.collectionView stringForDeleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]]]
         ];
@@ -82,10 +80,9 @@
 
 - (void)testShouldReloadDataWhenSettingObjects
 {
-    [self performInBackgroundAndWait:^{
+    [self before:^{
         [self.collection setObjects:@[@"1", @"2", @"3"]];
-    }];
-    [self performInSutQueueAndWait:^{
+    } then:^{
         NSArray *expectedOperationStrings = @[
             [self.collectionView stringForReloadData]
         ];
@@ -95,10 +92,9 @@
 
 - (void)testShouldReloadRowWhenReplacingObject
 {
-    [self performInBackgroundAndWait:^{
+    [self before:^{
         [self.collection replaceObjectAtIndex:2 withObject:@"0"];
-    }];
-    [self performInSutQueueAndWait:^{
+    } then:^{
         NSArray *expectedOperationStrings = @[
             [self.collectionView stringForReloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]]]
         ];
@@ -108,10 +104,9 @@
 
 - (void)testShouldMoveRowWhenMovingObject
 {
-    [self performInBackgroundAndWait:^{
+    [self before:^{
         [self.collection moveObjectAtIndex:3 toIndex:1];
-    }];
-    [self performInSutQueueAndWait:^{
+    } then:^{
         NSArray *expectedOperationStrings = @[
             [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:self.sectionIndex]
                                                   toIndexPath:[NSIndexPath indexPathForRow:1 inSection:self.sectionIndex]]
@@ -122,10 +117,9 @@
 
 - (void)testShouldMoveTwoRowsWhenExchagingObjects
 {
-    [self performInBackgroundAndWait:^{
+    [self before:^{
         [self.collection exchangeObjectAtIndex:2 withObjectAtIndex:5];
-    }];
-    [self performInSutQueueAndWait:^{
+    } then:^{
         NSArray *expectedOperationStrings = @[
             [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]
                                                   toIndexPath:[NSIndexPath indexPathForRow:5 inSection:self.sectionIndex]],
@@ -138,24 +132,19 @@
 
 #pragma mark - Helpers
 
-- (void)performInBackgroundAndWait:(void (^)())block
+- (void)before:(void (^)())before then:(void (^)())it
 {
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
-        block();
-        dispatch_semaphore_signal(semaphore);
-    });
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-}
+    XCTestExpectation *timeout = [self expectationWithDescription:@"timeout"];
 
-- (void)performInSutQueueAndWait:(void (^)())block
-{
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    [self.sut.operationQueue addOperationWithBlock:^{
-        block();
-        dispatch_semaphore_signal(semaphore);
-    }];
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+        before();
+        dispatch_async(self.sut.queue, ^{
+            it();
+            [timeout fulfill];
+        });
+    });
+
+    [self waitForExpectationsWithTimeout:2.f handler:nil];
 }
 
 @end
