@@ -56,72 +56,106 @@
 
 - (void)testShouldInsertRowWhenInsertingObject
 {
-    [self.collection insertObject:@"G" atIndex:6];
-    NSArray *expectedOperationStrings = @[
-        [self.collectionView stringForInsertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:6 inSection:self.sectionIndex]]]
-    ];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [self performInBackgroundAndWait:^{
+        [self.collection insertObject:@"G" atIndex:6];
+    }];
+    [self performInSutQueueAndWait:^{
+        NSArray *expectedOperationStrings = @[
+            [self.collectionView stringForInsertItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:6 inSection:self.sectionIndex]]]
+        ];
         XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should insert item when inserting object");
-    });
+    }];
 }
 
 - (void)testShouldDeleteRowWhenRemovingObject
 {
-    [self.collection removeObjectAtIndex:4];
-    NSArray *expectedOperationStrings = @[
-        [self.collectionView stringForDeleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]]]
-    ];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [self performInBackgroundAndWait:^{
+        [self.collection removeObjectAtIndex:4];
+    }];
+    [self performInSutQueueAndWait:^{
+        NSArray *expectedOperationStrings = @[
+            [self.collectionView stringForDeleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]]]
+        ];
         XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should delete item when removing object");
-    });
+    }];
 }
 
 - (void)testShouldReloadDataWhenSettingObjects
 {
-    [self.collection setObjects:@[@"1", @"2", @"3"]];
-    NSArray *expectedOperationStrings = @[
-        [self.collectionView stringForReloadData]
-    ];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [self performInBackgroundAndWait:^{
+        [self.collection setObjects:@[@"1", @"2", @"3"]];
+    }];
+    [self performInSutQueueAndWait:^{
+        NSArray *expectedOperationStrings = @[
+            [self.collectionView stringForReloadData]
+        ];
         XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should reload data when setting objects");
-    });
+    }];
 }
 
 - (void)testShouldReloadRowWhenReplacingObject
 {
-    [self.collection replaceObjectAtIndex:2 withObject:@"0"];
-    NSArray *expectedOperationStrings = @[
-        [self.collectionView stringForReloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]]]
-    ];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [self performInBackgroundAndWait:^{
+        [self.collection replaceObjectAtIndex:2 withObject:@"0"];
+    }];
+    [self performInSutQueueAndWait:^{
+        NSArray *expectedOperationStrings = @[
+            [self.collectionView stringForReloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]]]
+        ];
         XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should reload item when replacing object");
-    });
+    }];
 }
 
 - (void)testShouldMoveRowWhenMovingObject
 {
-    [self.collection moveObjectAtIndex:3 toIndex:1];
-    NSArray *expectedOperationStrings = @[
-        [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:self.sectionIndex]
-                                              toIndexPath:[NSIndexPath indexPathForRow:1 inSection:self.sectionIndex]]
-    ];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [self performInBackgroundAndWait:^{
+        [self.collection moveObjectAtIndex:3 toIndex:1];
+    }];
+    [self performInSutQueueAndWait:^{
+        NSArray *expectedOperationStrings = @[
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:1 inSection:self.sectionIndex]]
+        ];
         XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should move item when moving object");
-    });
+    }];
 }
 
 - (void)testShouldMoveTwoRowsWhenExchagingObjects
 {
-    [self.collection exchangeObjectAtIndex:2 withObjectAtIndex:5];
-    NSArray *expectedOperationStrings = @[
-        [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]
-                                              toIndexPath:[NSIndexPath indexPathForRow:5 inSection:self.sectionIndex]],
-        [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]
-                                              toIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]]
-    ];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [self performInBackgroundAndWait:^{
+        [self.collection exchangeObjectAtIndex:2 withObjectAtIndex:5];
+    }];
+    [self performInSutQueueAndWait:^{
+        NSArray *expectedOperationStrings = @[
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:5 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]]
+        ];
         XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should move two items when exchanging objects");
+    }];
+}
+
+#pragma mark - Helpers
+
+- (void)performInBackgroundAndWait:(void (^)())block
+{
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+        block();
+        dispatch_semaphore_signal(semaphore);
     });
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+}
+
+- (void)performInSutQueueAndWait:(void (^)())block
+{
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [self.sut.operationQueue addOperationWithBlock:^{
+        block();
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 }
 
 @end
