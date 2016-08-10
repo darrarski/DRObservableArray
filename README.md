@@ -8,7 +8,7 @@
 
 > Observable array and observable mutable array protocols with generic implementations in Objective-C.
 
-`DRObservableArray` helps to create bindings with mutable ordered collecions. For example, you can bind _(view)_models array to `UITableView`, so it automaticlally updates with animation whenever you modify the array.
+`DRObservableArray` helps to create bindings with mutable ordered collecions. For example, you can bind models (or view models) array to `UITableView`, so it automaticlally updates with animation whenever you modify the array.
 
 ## Usage
 
