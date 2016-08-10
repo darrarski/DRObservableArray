@@ -22,7 +22,7 @@
 
 - (NSString *)stringForReloadData
 {
-    return @"reloadData";
+    return [NSString stringWithFormat:@"reloadData on %@", [self stringForQueue]];
 }
 
 - (void)insertItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
@@ -32,8 +32,9 @@
 
 - (NSString *)stringForInsertItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
 {
-    return [NSString stringWithFormat:@"insertItemsAtIndexPaths:[%@]",
-            [self stringForIndexPaths:indexPaths]];
+    return [NSString stringWithFormat:@"insertItemsAtIndexPaths:[%@] on %@",
+            [self stringForIndexPaths:indexPaths],
+            [self stringForQueue]];
 }
 
 - (void)deleteItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
@@ -43,8 +44,9 @@
 
 - (NSString *)stringForDeleteItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
 {
-    return [NSString stringWithFormat:@"deleteItemsAtIndexPaths:[%@]",
-            [self stringForIndexPaths:indexPaths]];
+    return [NSString stringWithFormat:@"deleteItemsAtIndexPaths:[%@] on %@",
+            [self stringForIndexPaths:indexPaths],
+            [self stringForQueue]];
 }
 
 - (void)reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
@@ -54,8 +56,9 @@
 
 - (NSString *)stringForReloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
 {
-    return [NSString stringWithFormat:@"reloadItemsAtIndexPaths:[%@]",
-            [self stringForIndexPaths:indexPaths]];
+    return [NSString stringWithFormat:@"reloadItemsAtIndexPaths:[%@] on %@",
+            [self stringForIndexPaths:indexPaths],
+            [self stringForQueue]];
 }
 
 - (void)moveItemAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath
@@ -65,9 +68,10 @@
 
 - (NSString *)stringForMoveItemAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath
 {
-    return [NSString stringWithFormat:@"moveItemAtIndexPaths:[%@] toIndexPath:[%@]",
+    return [NSString stringWithFormat:@"moveItemAtIndexPaths:[%@] toIndexPath:[%@] on %@",
             [self stringForIndexPath:indexPath],
-            [self stringForIndexPath:newIndexPath]];
+            [self stringForIndexPath:newIndexPath],
+            [self stringForQueue]];
 }
 
 #pragma mark - Helpers
@@ -84,6 +88,11 @@
         [strings addObject:[self stringForIndexPath:indexPath]];
     }];
     return [strings componentsJoinedByString:@", "];
+}
+
+- (NSString *)stringForQueue
+{
+    return [NSString stringWithUTF8String:dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL)];
 }
 
 @end

@@ -22,7 +22,7 @@
 
 - (NSString *)stringForBeginUpdates
 {
-    return @"beginUpdates";
+    return [NSString stringWithFormat:@"beginUpdates on %@", [self stringForQueue]];
 }
 
 - (void)endUpdates
@@ -32,7 +32,7 @@
 
 - (NSString *)stringForEndUpdates
 {
-    return @"endUpdates";
+    return [NSString stringWithFormat:@"endUpdates on %@", [self stringForQueue]];
 }
 
 - (void)reloadData
@@ -42,7 +42,7 @@
 
 - (NSString *)stringForReloadData
 {
-    return @"reloadData";
+    return [NSString stringWithFormat:@"reloadData on %@", [self stringForQueue]];
 }
 
 - (void)insertRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
@@ -52,9 +52,10 @@
 
 - (NSString *)stringForInsertRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
 {
-    return [NSString stringWithFormat:@"insertRowsAtIndexPaths:[%@] withRowAnimation:[%@]",
+    return [NSString stringWithFormat:@"insertRowsAtIndexPaths:[%@] withRowAnimation:[%@] on %@",
             [self stringForIndexPaths:indexPaths],
-            [self stringForAnimation:animation]];
+            [self stringForAnimation:animation],
+            [self stringForQueue]];
 }
 
 - (void)deleteRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
@@ -64,9 +65,10 @@
 
 - (NSString *)stringForDeleteRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
 {
-    return [NSString stringWithFormat:@"deleteRowsAtIndexPaths:[%@] withRowAnimation:[%@]",
-                                      [self stringForIndexPaths:indexPaths],
-                                      [self stringForAnimation:animation]];
+    return [NSString stringWithFormat:@"deleteRowsAtIndexPaths:[%@] withRowAnimation:[%@] on %@",
+            [self stringForIndexPaths:indexPaths],
+            [self stringForAnimation:animation],
+            [self stringForQueue]];
 }
 
 - (void)reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
@@ -76,9 +78,10 @@
 
 - (NSString *)stringForReloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
 {
-    return [NSString stringWithFormat:@"reloadRowsAtIndexPaths:[%@] withRowAnimation:[%@]",
-                                      [self stringForIndexPaths:indexPaths],
-                                      [self stringForAnimation:animation]];
+    return [NSString stringWithFormat:@"reloadRowsAtIndexPaths:[%@] withRowAnimation:[%@] on %@",
+            [self stringForIndexPaths:indexPaths],
+            [self stringForAnimation:animation],
+            [self stringForQueue]];
 }
 
 - (void)moveRowAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath
@@ -89,9 +92,10 @@
 
 - (NSString *)stringForMoveRowAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath
 {
-    return [NSString stringWithFormat:@"moveRowAtIndexPath:[%@] toIndexPath:[%@]",
-                                      [self stringForIndexPath:indexPath],
-                                      [self stringForIndexPath:newIndexPath]];
+    return [NSString stringWithFormat:@"moveRowAtIndexPath:[%@] toIndexPath:[%@] on %@",
+            [self stringForIndexPath:indexPath],
+            [self stringForIndexPath:newIndexPath],
+            [self stringForQueue]];
 }
 
 #pragma mark - Helpers
@@ -123,6 +127,11 @@
         case UITableViewRowAnimationAutomatic: return @"Automatic";
     }
     return @"";
+}
+
+- (NSString *)stringForQueue
+{
+    return [NSString stringWithUTF8String:dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL)];
 }
 
 @end
