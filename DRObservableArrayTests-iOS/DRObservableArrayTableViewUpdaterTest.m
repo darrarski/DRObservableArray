@@ -151,7 +151,7 @@
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
         before();
         dispatch_async(self.sut.queue, ^{
-            it();
+            dispatch_sync(dispatch_get_main_queue(), it);
             [timeout fulfill];
         });
     });
