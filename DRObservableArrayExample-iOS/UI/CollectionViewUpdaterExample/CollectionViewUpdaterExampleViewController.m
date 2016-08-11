@@ -53,7 +53,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    UIColor *color = [self.colors objectAtIndex:(NSUInteger) indexPath.row];
+    UIColor *color = ((NSArray *) [self.colors objectAtIndex:(NSUInteger) indexPath.row])[1];
     cell.contentView.backgroundColor = color;
 
     return cell;
@@ -73,33 +73,33 @@
     if (!_colors) {
         DRGenericObservableArray *colors = [[DRGenericObservableArray alloc] init];
         colors.objects = @[
-            [self colorWithHex:0xC0C0C0],
-            [self colorWithHex:0x606060],
-            [self colorWithHex:0x404040],
+            @[@1, [self colorWithHex:0xC0C0C0]],
+            @[@2, [self colorWithHex:0x606060]],
+            @[@3, [self colorWithHex:0x404040]],
 
-            [self colorWithHex:0xFF0000],
-            [self colorWithHex:0x800000],
-            [self colorWithHex:0x400000],
+            @[@4, [self colorWithHex:0xFF0000]],
+            @[@5, [self colorWithHex:0x800000]],
+            @[@6, [self colorWithHex:0x400000]],
 
-            [self colorWithHex:0xFFFF00],
-            [self colorWithHex:0x808000],
-            [self colorWithHex:0x404000],
+            @[@7, [self colorWithHex:0xFFFF00]],
+            @[@8, [self colorWithHex:0x808000]],
+            @[@9, [self colorWithHex:0x404000]],
 
-            [self colorWithHex:0x00FF00],
-            [self colorWithHex:0x008000],
-            [self colorWithHex:0x004000],
+            @[@10, [self colorWithHex:0x00FF00]],
+            @[@11, [self colorWithHex:0x008000]],
+            @[@12, [self colorWithHex:0x004000]],
 
-            [self colorWithHex:0x00FFFF],
-            [self colorWithHex:0x008080],
-            [self colorWithHex:0x004040],
+            @[@13, [self colorWithHex:0x00FFFF]],
+            @[@14, [self colorWithHex:0x008080]],
+            @[@15, [self colorWithHex:0x004040]],
 
-            [self colorWithHex:0x0000FF],
-            [self colorWithHex:0x000080],
-            [self colorWithHex:0x000040],
+            @[@16, [self colorWithHex:0x0000FF]],
+            @[@17, [self colorWithHex:0x000080]],
+            @[@18, [self colorWithHex:0x000040]],
 
-            [self colorWithHex:0xFF00FF],
-            [self colorWithHex:0x800080],
-            [self colorWithHex:0x400040],
+            @[@19, [self colorWithHex:0xFF00FF]],
+            @[@20, [self colorWithHex:0x800080]],
+            @[@21, [self colorWithHex:0x400040]],
         ];
         _colors = colors;
     }
