@@ -52,7 +52,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    NSString *word = [self.words objectAtIndex:(NSUInteger) indexPath.row];
+    NSString *word = [self.words objectAtIndex:(NSUInteger) indexPath.row][1];
     cell.textLabel.text = word;
 
     return cell;
@@ -65,9 +65,10 @@
     if (!_words) {
         DRGenericObservableArray *words = [[DRGenericObservableArray alloc] init];
         words.objects = @[
-            @"jat", @"wise", @"genit", @"file", @"straw", @"cow", @"sleuth",
-            @"lunes", @"scan", @"gyn", @"luce", @"weft", @"bim", @"moit",
-            @"wrench", @"kempt", @"klepht", @"whiz", @"prawn", @"crud"
+            @[@1, @"jat"], @[@2, @"wise"], @[@3, @"genit"], @[@4, @"file"], @[@5, @"straw"],
+            @[@6, @"cow"], @[@7, @"sleuth"], @[@8, @"lunes"], @[@9, @"scan"], @[@10, @"gyn"],
+            @[@11, @"luce"], @[@12, @"weft"], @[@13, @"bim"], @[@14, @"moit"], @[@15, @"wrench"],
+            @[@16, @"kempt"], @[@17, @"klepht"], @[@18, @"whiz"], @[@19, @"prawn"], @[@20, @"crud"]
         ];
         _words = words;
     }
