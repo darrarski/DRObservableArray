@@ -19,6 +19,7 @@
 		9DA8A625B64052DEC03C965E /* TableViewUpdaterExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A25D4256330C5DD53255 /* TableViewUpdaterExampleViewController.m */; };
 		9DA8A76B0F90541451997F1C /* UITableViewMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A7D038F66A25A201A7EE /* UITableViewMock.m */; };
 		9DA8A8081888DF7234AD6DE3 /* DRGenericObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AF99E617FDFCD07FBB36 /* DRGenericObservableArray.m */; };
+		9DA8AB223B887F783146B46F /* CollectionViewUpdaterExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A07A9CE28B003A2A7DC7 /* CollectionViewUpdaterExampleCell.m */; };
 		9DA8ACFAF75A56CE2EB5A115 /* DRObservableArrayObserversSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A31E47166757A4A4D187 /* DRObservableArrayObserversSet.m */; };
 		9DA8ADA1526E6392A26EBBF9 /* DRObservableArrayTableViewUpdaterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A3BE8CF53A043902C881 /* DRObservableArrayTableViewUpdaterTest.m */; };
 		9DA8AF5B89C7D514232D0611 /* DRGenericObservableArray+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A67D53B02D6DC2A4BE1C /* DRGenericObservableArray+Sorting.m */; };
@@ -46,7 +47,9 @@
 		31FF53BC1D52BB4E00EE1C70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31FF53BE1D52BB4E00EE1C70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		9DA8A015F23648588FEFCCAA /* CollectionViewUpdaterExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewUpdaterExampleViewController.m; sourceTree = "<group>"; };
+		9DA8A07A9CE28B003A2A7DC7 /* CollectionViewUpdaterExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewUpdaterExampleCell.m; sourceTree = "<group>"; };
 		9DA8A0B2FAB9AB68B49C3235 /* DRGenericObservableArray+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRGenericObservableArray+Sorting.h"; sourceTree = "<group>"; };
+		9DA8A10F7000D2A6D7390FD4 /* CollectionViewUpdaterExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewUpdaterExampleCell.h; sourceTree = "<group>"; };
 		9DA8A220968051C91046353C /* DRObservableArrayObserversSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserversSet.h; sourceTree = "<group>"; };
 		9DA8A23A6F80A601A80582BA /* DRObservableArrayCollectionViewUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayCollectionViewUpdater.m; sourceTree = "<group>"; };
 		9DA8A25D4256330C5DD53255 /* TableViewUpdaterExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewUpdaterExampleViewController.m; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 			children = (
 				9DA8A015F23648588FEFCCAA /* CollectionViewUpdaterExampleViewController.m */,
 				9DA8A7D93C35F1102B4BF651 /* CollectionViewUpdaterExampleViewController.h */,
+				9DA8A07A9CE28B003A2A7DC7 /* CollectionViewUpdaterExampleCell.m */,
+				9DA8A10F7000D2A6D7390FD4 /* CollectionViewUpdaterExampleCell.h */,
 			);
 			path = CollectionViewUpdaterExample;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				9DA8A36229E132AD2E426048 /* ExamplesListViewController.m in Sources */,
 				9DA8A5564EC2C5B6188B1827 /* CollectionViewUpdaterExampleViewController.m in Sources */,
 				9DA8AFB8FF7B58AA8B4013D8 /* DRObservableArrayCollectionViewUpdater.m in Sources */,
+				9DA8AB223B887F783146B46F /* CollectionViewUpdaterExampleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
