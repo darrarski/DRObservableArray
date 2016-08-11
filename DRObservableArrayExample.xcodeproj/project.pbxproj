@@ -11,6 +11,7 @@
 		31FF53B21D52BB4E00EE1C70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FF53B11D52BB4E00EE1C70 /* AppDelegate.m */; };
 		31FF53BA1D52BB4E00EE1C70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31FF53B91D52BB4E00EE1C70 /* Assets.xcassets */; };
 		31FF53BD1D52BB4E00EE1C70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31FF53BB1D52BB4E00EE1C70 /* LaunchScreen.storyboard */; };
+		9DA8A11D1A57F4292D1876B1 /* TableViewUpdaterExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A0D62439751087343FFF /* TableViewUpdaterExampleCell.m */; };
 		9DA8A22DF345FB34A957A74E /* DRObservableArrayCollectionViewUpdaterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8ABA37BA9EDFFCFBD5E68 /* DRObservableArrayCollectionViewUpdaterTest.m */; };
 		9DA8A238CCA21BDD5D3623D9 /* UICollectionViewMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8AD22F2B131062E3AFB86 /* UICollectionViewMock.m */; };
 		9DA8A36229E132AD2E426048 /* ExamplesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8A629C504C0514A9E5A30 /* ExamplesListViewController.m */; };
@@ -49,6 +50,7 @@
 		9DA8A015F23648588FEFCCAA /* CollectionViewUpdaterExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewUpdaterExampleViewController.m; sourceTree = "<group>"; };
 		9DA8A07A9CE28B003A2A7DC7 /* CollectionViewUpdaterExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewUpdaterExampleCell.m; sourceTree = "<group>"; };
 		9DA8A0B2FAB9AB68B49C3235 /* DRGenericObservableArray+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DRGenericObservableArray+Sorting.h"; sourceTree = "<group>"; };
+		9DA8A0D62439751087343FFF /* TableViewUpdaterExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewUpdaterExampleCell.m; sourceTree = "<group>"; };
 		9DA8A10F7000D2A6D7390FD4 /* CollectionViewUpdaterExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewUpdaterExampleCell.h; sourceTree = "<group>"; };
 		9DA8A220968051C91046353C /* DRObservableArrayObserversSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableArrayObserversSet.h; sourceTree = "<group>"; };
 		9DA8A23A6F80A601A80582BA /* DRObservableArrayCollectionViewUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayCollectionViewUpdater.m; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		9DA8AC8F97546AC825CE8209 /* UITableViewMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewMock.h; sourceTree = "<group>"; };
 		9DA8AD22F2B131062E3AFB86 /* UICollectionViewMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewMock.m; sourceTree = "<group>"; };
 		9DA8AD3A2D496089996E370F /* DRObservableMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRObservableMutableArray.h; sourceTree = "<group>"; };
+		9DA8AD79901C44C1F88EE185 /* TableViewUpdaterExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewUpdaterExampleCell.h; sourceTree = "<group>"; };
 		9DA8ADC35DA23B834049BD14 /* DRObservableArrayTableViewUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRObservableArrayTableViewUpdater.m; sourceTree = "<group>"; };
 		9DA8AF99E617FDFCD07FBB36 /* DRGenericObservableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRGenericObservableArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +237,8 @@
 			children = (
 				9DA8AC65C742F4BBF4161F4D /* TableViewUpdaterExampleViewController.h */,
 				9DA8A25D4256330C5DD53255 /* TableViewUpdaterExampleViewController.m */,
+				9DA8A0D62439751087343FFF /* TableViewUpdaterExampleCell.m */,
+				9DA8AD79901C44C1F88EE185 /* TableViewUpdaterExampleCell.h */,
 			);
 			path = TableViewUpdaterExample;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				9DA8A5564EC2C5B6188B1827 /* CollectionViewUpdaterExampleViewController.m in Sources */,
 				9DA8AFB8FF7B58AA8B4013D8 /* DRObservableArrayCollectionViewUpdater.m in Sources */,
 				9DA8AB223B887F783146B46F /* CollectionViewUpdaterExampleCell.m in Sources */,
+				9DA8A11D1A57F4292D1876B1 /* TableViewUpdaterExampleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
