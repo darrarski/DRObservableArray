@@ -6,6 +6,7 @@
 #import "CollectionViewUpdaterExampleViewController.h"
 #import "DRGenericObservableArray.h"
 #import "DRObservableArrayCollectionViewUpdater.h"
+#import "CollectionViewUpdaterExampleCell.h"
 
 @interface CollectionViewUpdaterExampleViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -32,7 +33,7 @@
                                                                                            target:self
                                                                                            action:@selector(shuffleButtonAction)];
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.collectionView registerClass:[CollectionViewUpdaterExampleCell class] forCellWithReuseIdentifier:@"cell"];
     [self.colors.observers addObserver:self.colorsCollectionViewUpdater];
 }
 
@@ -52,7 +53,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    CollectionViewUpdaterExampleCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+
+    NSNumber *number = ((NSArray *) [self.colors objectAtIndex:(NSUInteger) indexPath.row])[0];
+    cell.label.text = number.stringValue;
+
     UIColor *color = ((NSArray *) [self.colors objectAtIndex:(NSUInteger) indexPath.row])[1];
     cell.contentView.backgroundColor = color;
 
