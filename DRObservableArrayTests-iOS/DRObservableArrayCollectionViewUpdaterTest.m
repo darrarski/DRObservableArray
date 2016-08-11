@@ -11,6 +11,7 @@
 #import "DRObservableMutableArray.h"
 #import "UICollectionViewMock.h"
 #import "DRGenericObservableArray.h"
+#import "DRGenericObservableArray+Sorting.h"
 
 @interface DRObservableArrayCollectionViewUpdaterTest : XCTestCase
 
@@ -127,6 +128,41 @@
                                                   toIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]]
         ];
         XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should move two items when exchanging objects");
+    }];
+}
+
+- (void)testShouldPerformCorrectOperationsWhenBubbleSorting
+{
+    [self before:^{
+        DRGenericObservableArray *collection = (DRGenericObservableArray *) self.collection;
+        collection.objects = @[@2, @1, @5, @8, @3, @7, @4, @6];
+        [collection bubbleSort];
+    } then:^{
+        NSArray *sortedObjects = @[@1, @2, @3, @4, @5, @6, @7, @8];
+        XCTAssertEqualObjects(self.collection.objects, sortedObjects, @"Should sort correctly");
+
+        NSArray *expectedOperationStrings = @[
+            [self.collectionView stringForReloadData],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:1 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:5 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:6 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:7 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:3 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:5 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:6 inSection:self.sectionIndex]],
+            [self.collectionView stringForMoveItemAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:self.sectionIndex]
+                                                  toIndexPath:[NSIndexPath indexPathForRow:4 inSection:self.sectionIndex]]
+        ];
+        XCTAssertEqualObjects(self.collectionView.operationStrings, expectedOperationStrings, @"Should perform operations in correct order when sorting objects with Bubble Sort");
     }];
 }
 
