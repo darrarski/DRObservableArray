@@ -6,6 +6,7 @@
 #import "TableViewUpdaterExampleViewController.h"
 #import "DRGenericObservableArray.h"
 #import "DRObservableArrayTableViewUpdater.h"
+#import "TableViewUpdaterExampleCell.h"
 
 @interface TableViewUpdaterExampleViewController ()
 
@@ -30,7 +31,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                            target:self
                                                                                            action:@selector(shuffleButtonAction)];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerClass:[TableViewUpdaterExampleCell class] forCellReuseIdentifier:@"cell"];
     [self.words.observers addObserver:self.wordsTableViewUpdater];
 }
 
@@ -50,10 +51,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    TableViewUpdaterExampleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+
     NSString *word = [self.words objectAtIndex:(NSUInteger) indexPath.row][1];
     cell.textLabel.text = word;
+
+    NSNumber *number = [self.words objectAtIndex:(NSUInteger) indexPath.row][0];
+    cell.detailTextLabel.text = number.stringValue;
 
     return cell;
 }
